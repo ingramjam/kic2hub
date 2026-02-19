@@ -1,0 +1,123 @@
+<section id="testimonials" class="content-section py-16 md:py-24 bg-theme-bg" data-module-id="{{name}}">
+    <div class="container mx-auto px-6 scroll-animate" style="position: relative; z-index: 1;">
+        
+        {% if module.section_headline %}
+            <h3 class="text-2xl md:text-3xl font-semibold mb-5 text-center text-theme-primary">
+                {{ module.section_headline }}
+            </h3>
+        {% endif %}
+        
+        {% if module.section_introduction %}
+            <div class="text-center text-apple-gray-medium mb-12 md:mb-16 max-w-2xl mx-auto text-md">
+                {{ module.section_introduction }}
+            </div>
+        {% endif %}
+        
+        {% set has_testimonial_1 = module.testimonial_1.quote is truthy %}
+        {% set has_testimonial_2 = module.testimonial_2.quote is truthy %}
+        {% set has_testimonial_3 = module.testimonial_3.quote is truthy %}
+        {% set has_any_testimonials = has_testimonial_1 or has_testimonial_2 or has_testimonial_3 %}
+
+        {% if has_any_testimonials %}
+            <div class="horizontal-scroll-container">
+                
+                {# Testimonial 1 #}
+                {% if has_testimonial_1 %}
+                    <div class="card testimonial-card">
+                        {% if module.testimonial_1.author_image %}
+                            <div class="testimonial-author-image">
+                                <img src="{{ module.testimonial_1.author_image.src }}" alt="{{ module.testimonial_1.author_image.alt }}" width="{{ module.testimonial_1.author_image.width }}" height="{{ module.testimonial_1.author_image.height }}" />
+                            </div>
+                        {% endif %}
+                        
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">
+                                {{ module.testimonial_1.quote }}
+                            </p>
+                            
+                            {% if module.testimonial_1.author_info or module.testimonial_1.icon_class %}
+                                <div class="testimonial-author-info">
+                                    {% if module.testimonial_1.icon_class %}
+                                        <div class="card-icon">
+                                            <i class="{{ module.testimonial_1.icon_class }}"></i>
+                                        </div>
+                                    {% endif %}
+                                    {% if module.testimonial_1.author_info %}
+                                        <p class="testimonial-author">
+                                            {{ module.testimonial_1.author_info }}
+                                        </p>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+
+                {# Testimonial 2 #}
+                {% if has_testimonial_2 %}
+                    <div class="card testimonial-card">
+                        {% if module.testimonial_2.author_image %}
+                            <div class="testimonial-author-image">
+                                <img src="{{ module.testimonial_2.author_image.src }}" alt="{{ module.testimonial_2.author_image.alt }}" width="{{ module.testimonial_2.author_image.width }}" height="{{ module.testimonial_2.author_image.height }}" />
+                            </div>
+                        {% endif %}
+                        
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">
+                                {{ module.testimonial_2.quote }}
+                            </p>
+                            
+                            {% if module.testimonial_2.author_info or module.testimonial_2.icon_class %}
+                                <div class="testimonial-author-info">
+                                    {% if module.testimonial_2.icon_class %}
+                                        <div class="card-icon">
+                                            <i class="{{ module.testimonial_2.icon_class }}"></i>
+                                        </div>
+                                    {% endif %}
+                                    {% if module.testimonial_2.author_info %}
+                                        <p class="testimonial-author">
+                                            {{ module.testimonial_2.author_info }}
+                                        </p>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+
+                {# Testimonial 3 #}
+                {% if has_testimonial_3 %}
+                    <div class="card testimonial-card">
+                        {% if module.testimonial_3.author_image %}
+                            <div class="testimonial-author-image">
+                                <img src="{{ module.testimonial_3.author_image.src }}" alt="{{ module.testimonial_3.author_image.alt }}" width="{{ module.testimonial_3.author_image.width }}" height="{{ module.testimonial_3.author_image.height }}" />
+                            </div>
+                        {% endif %}
+                        
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">
+                                {{ module.testimonial_3.quote }}
+                            </p>
+                            
+                            {% if module.testimonial_3.author_info or module.testimonial_3.icon_class %}
+                                <div class="testimonial-author-info">
+                                    {% if module.testimonial_3.icon_class %}
+                                        <div class="card-icon">
+                                            <i class="{{ module.testimonial_3.icon_class }}"></i>
+                                        </div>
+                                    {% endif %}
+                                    {% if module.testimonial_3.author_info %}
+                                        <p class="testimonial-author">
+                                            {{ module.testimonial_3.author_info }}
+                                        </p>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+                
+            </div>
+        {% endif %}
+    </div>
+</section>

@@ -6,7 +6,7 @@
     /* Card dimensions - tall to showcase images */
     flex: 0 0 320px;
     width: 320px;
-    height: 530px;
+    height: 500px;
 
     /* Flex properties */
     display: flex;
