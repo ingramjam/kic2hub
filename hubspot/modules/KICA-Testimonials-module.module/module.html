@@ -26,7 +26,7 @@
                     <div class="card testimonial-card">
                         {% if module.testimonial_1.author_image %}
                             <div class="testimonial-author-image">
-                                <img src="{{ module.testimonial_1.author_image | urlize }}" alt="{{ module.testimonial_1.author_info }}" />
+                                {{ module.testimonial_1.author_image }}
                             </div>
                         {% endif %}
                         
@@ -53,7 +53,7 @@
                     <div class="card testimonial-card">
                         {% if module.testimonial_2.author_image %}
                             <div class="testimonial-author-image">
-                                <img src="{{ module.testimonial_2.author_image | urlize }}" alt="{{ module.testimonial_2.author_info }}" />
+                                {{ module.testimonial_2.author_image }}
                             </div>
                         {% endif %}
                         
@@ -80,7 +80,7 @@
                     <div class="card testimonial-card">
                         {% if module.testimonial_3.author_image %}
                             <div class="testimonial-author-image">
-                                <img src="{{ module.testimonial_3.author_image | urlize }}" alt="{{ module.testimonial_3.author_info }}" />
+                                {{ module.testimonial_3.author_image }}
                             </div>
                         {% endif %}
                         
