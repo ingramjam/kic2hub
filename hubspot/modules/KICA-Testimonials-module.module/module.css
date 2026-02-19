@@ -3,7 +3,7 @@
     background-color: var(--card-bg-color, white);
     color: var(--card-text-color, #333);
     
-    /* Card dimensions - tall to showcase images */
+    /* Card dimensions - tall to showcase images/videos */
     flex: 0 0 320px;
     width: 320px;
     height: 530px;
@@ -24,10 +24,10 @@
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* Author image - large, prominent showcase at top */
+/* Author image/video - square 270x270 showcase at top */
 [data-module-id="{{name}}"] .testimonial-author-image {
-    width: 100%;
-    height: 280px;
+    width: 270px;
+    height: 270px;
     overflow: hidden;
     flex-shrink: 0;
     display: flex;
@@ -36,6 +36,7 @@
     background-color: var(--card-bg-lighter, #f5f5f5);
     border-radius: 1rem 1rem 0 0;
     position: relative;
+    margin: 0 auto;
 }
 
 [data-module-id="{{name}}"] .testimonial-author-image img {
@@ -46,11 +47,11 @@
 }
 
 [data-module-id="{{name}}"] .testimonial-author-image video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 270px;
+    height: 270px;
     display: block;
     background-color: #000;
+    object-fit: cover;
 }
 
 /* Content section - minimal padding, tight at bottom */

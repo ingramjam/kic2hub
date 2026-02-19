@@ -7,6 +7,18 @@
         return; 
     }
 
+    // Apply video settings from data attributes
+    const videos = moduleElement.querySelectorAll('.testimonial-video');
+    videos.forEach(video => {
+        const autoplayAttr = video.getAttribute('data-autoplay');
+        
+        // Apply autoplay if needed
+        if (autoplayAttr) {
+            video.autoplay = true;
+            video.muted = true;
+        }
+    });
+
     // Find elements to animate only within this module instance
     const elementsToObserve = moduleElement.querySelectorAll('.scroll-animate');
 

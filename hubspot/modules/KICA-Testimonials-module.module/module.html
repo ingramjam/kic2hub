@@ -28,7 +28,8 @@
                             <div class="testimonial-author-image">
                                 {% if module.testimonial_1.video_url %}
                                     {% set video_url = module.testimonial_1.video_url.url if module.testimonial_1.video_url.url else module.testimonial_1.video_url %}
-                                    <video width="100%" height="100%" controls playsinline>
+                                    {% set autoplay_attr = "autoplay muted" if module.testimonial_1.autoplay else "" %}
+                                    <video width="270" height="270" controls playsinline data-autoplay="{{ autoplay_attr }}" class="testimonial-video">
                                         <source src="{{ video_url }}" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
@@ -68,7 +69,8 @@
                             <div class="testimonial-author-image">
                                 {% if module.testimonial_2.video_url %}
                                     {% set video_url = module.testimonial_2.video_url.url if module.testimonial_2.video_url.url else module.testimonial_2.video_url %}
-                                    <video width="100%" height="100%" controls playsinline>
+                                    {% set autoplay_attr = "autoplay muted" if module.testimonial_2.autoplay else "" %}
+                                    <video width="270" height="270" controls playsinline data-autoplay="{{ autoplay_attr }}" class="testimonial-video">
                                         <source src="{{ video_url }}" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
@@ -108,7 +110,8 @@
                             <div class="testimonial-author-image">
                                 {% if module.testimonial_3.video_url %}
                                     {% set video_url = module.testimonial_3.video_url.url if module.testimonial_3.video_url.url else module.testimonial_3.video_url %}
-                                    <video width="100%" height="100%" controls playsinline>
+                                    {% set autoplay_attr = "autoplay muted" if module.testimonial_3.autoplay else "" %}
+                                    <video width="270" height="270" controls playsinline data-autoplay="{{ autoplay_attr }}" class="testimonial-video">
                                         <source src="{{ video_url }}" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>

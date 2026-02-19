@@ -65,6 +65,15 @@
     "type" : "file",
     "display_width" : null,
     "allow_external_url" : true
+  }, {
+    "id" : "g8h9i0j1-k2l3-m4n5-o6p7-q8r9s0t1u2v3",
+    "name" : "autoplay",
+    "label" : "Autoplay Video",
+    "required" : false,
+    "locked" : false,
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -124,6 +133,15 @@
     "type" : "file",
     "display_width" : null,
     "allow_external_url" : true
+  }, {
+    "id" : "i0j1k2l3-m4n5-o6p7-q8r9-s0t1u2v3w4x5",
+    "name" : "autoplay",
+    "label" : "Autoplay Video",
+    "required" : false,
+    "locked" : false,
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -183,6 +201,15 @@
     "type" : "file",
     "display_width" : null,
     "allow_external_url" : true
+  }, {
+    "id" : "k2l3m4n5-o6p7-q8r9-s0t1-u2v3w4x5y6z7",
+    "name" : "autoplay",
+    "label" : "Autoplay Video",
+    "required" : false,
+    "locked" : false,
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
