@@ -12,138 +12,48 @@
                 {{ module.section_introduction }}
             </div>
         {% endif %}
-        
-        {% set has_testimonial_1 = module.testimonial_1.quote is truthy %}
-        {% set has_testimonial_2 = module.testimonial_2.quote is truthy %}
-        {% set has_testimonial_3 = module.testimonial_3.quote is truthy %}
-        {% set has_any_testimonials = has_testimonial_1 or has_testimonial_2 or has_testimonial_3 %}
 
-        {% if has_any_testimonials %}
+        {% if module.testimonials %}
             <div class="horizontal-scroll-container">
-                
-                {# Testimonial 1 #}
-                {% if has_testimonial_1 %}
+                {% for testimonial in module.testimonials %}
                     <div class="card testimonial-card">
-                        {% if module.testimonial_1.video_url or module.testimonial_1.author_image %}
+                        {% if testimonial.video_url or testimonial.author_image %}
                             <div class="testimonial-author-image">
-                                {% if module.testimonial_1.video_url %}
-                                    {% set video_url = module.testimonial_1.video_url.url if module.testimonial_1.video_url.url else module.testimonial_1.video_url %}
-                                    {% set autoplay_attr = "autoplay muted" if module.testimonial_1.autoplay else "" %}
+                                {% if testimonial.video_url %}
+                                    {% set video_url = testimonial.video_url.url if testimonial.video_url.url else testimonial.video_url %}
+                                    {% set autoplay_attr = "autoplay muted" if testimonial.autoplay else "" %}
                                     <video width="270" height="270" controls playsinline data-autoplay="{{ autoplay_attr }}" class="testimonial-video">
                                         <source src="{{ video_url }}" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
-                                {% elif module.testimonial_1.author_image %}
-                                    <img src="{{ module.testimonial_1.author_image.src }}" alt="{{ module.testimonial_1.author_image.alt }}" width="{{ module.testimonial_1.author_image.width }}" height="{{ module.testimonial_1.author_image.height }}" />
+                                {% elif testimonial.author_image %}
+                                    <img src="{{ testimonial.author_image.src }}" alt="{{ testimonial.author_image.alt }}" width="{{ testimonial.author_image.width }}" height="{{ testimonial.author_image.height }}" />
                                 {% endif %}
                             </div>
                         {% endif %}
                         
                         <div class="testimonial-content">
                             <p class="testimonial-quote">
-                                {{ module.testimonial_1.quote }}
+                                {{ testimonial.quote }}
                             </p>
                             
-                            {% if module.testimonial_1.author_info or module.testimonial_1.icon_class %}
+                            {% if testimonial.author_info or testimonial.icon_class %}
                                 <div class="testimonial-author-info">
-                                    {% if module.testimonial_1.icon_class %}
+                                    {% if testimonial.icon_class %}
                                         <div class="card-icon">
-                                            <i class="{{ module.testimonial_1.icon_class }}"></i>
+                                            <i class="{{ testimonial.icon_class }}"></i>
                                         </div>
                                     {% endif %}
-                                    {% if module.testimonial_1.author_info %}
+                                    {% if testimonial.author_info %}
                                         <p class="testimonial-author">
-                                            {{ module.testimonial_1.author_info }}
+                                            {{ testimonial.author_info }}
                                         </p>
                                     {% endif %}
                                 </div>
                             {% endif %}
                         </div>
                     </div>
-                {% endif %}
-
-                {# Testimonial 2 #}
-                {% if has_testimonial_2 %}
-                    <div class="card testimonial-card">
-                        {% if module.testimonial_2.video_url or module.testimonial_2.author_image %}
-                            <div class="testimonial-author-image">
-                                {% if module.testimonial_2.video_url %}
-                                    {% set video_url = module.testimonial_2.video_url.url if module.testimonial_2.video_url.url else module.testimonial_2.video_url %}
-                                    {% set autoplay_attr = "autoplay muted" if module.testimonial_2.autoplay else "" %}
-                                    <video width="270" height="270" controls playsinline data-autoplay="{{ autoplay_attr }}" class="testimonial-video">
-                                        <source src="{{ video_url }}" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                {% elif module.testimonial_2.author_image %}
-                                    <img src="{{ module.testimonial_2.author_image.src }}" alt="{{ module.testimonial_2.author_image.alt }}" width="{{ module.testimonial_2.author_image.width }}" height="{{ module.testimonial_2.author_image.height }}" />
-                                {% endif %}
-                            </div>
-                        {% endif %}
-                        
-                        <div class="testimonial-content">
-                            <p class="testimonial-quote">
-                                {{ module.testimonial_2.quote }}
-                            </p>
-                            
-                            {% if module.testimonial_2.author_info or module.testimonial_2.icon_class %}
-                                <div class="testimonial-author-info">
-                                    {% if module.testimonial_2.icon_class %}
-                                        <div class="card-icon">
-                                            <i class="{{ module.testimonial_2.icon_class }}"></i>
-                                        </div>
-                                    {% endif %}
-                                    {% if module.testimonial_2.author_info %}
-                                        <p class="testimonial-author">
-                                            {{ module.testimonial_2.author_info }}
-                                        </p>
-                                    {% endif %}
-                                </div>
-                            {% endif %}
-                        </div>
-                    </div>
-                {% endif %}
-
-                {# Testimonial 3 #}
-                {% if has_testimonial_3 %}
-                    <div class="card testimonial-card">
-                        {% if module.testimonial_3.video_url or module.testimonial_3.author_image %}
-                            <div class="testimonial-author-image">
-                                {% if module.testimonial_3.video_url %}
-                                    {% set video_url = module.testimonial_3.video_url.url if module.testimonial_3.video_url.url else module.testimonial_3.video_url %}
-                                    {% set autoplay_attr = "autoplay muted" if module.testimonial_3.autoplay else "" %}
-                                    <video width="270" height="270" controls playsinline data-autoplay="{{ autoplay_attr }}" class="testimonial-video">
-                                        <source src="{{ video_url }}" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                {% elif module.testimonial_3.author_image %}
-                                    <img src="{{ module.testimonial_3.author_image.src }}" alt="{{ module.testimonial_3.author_image.alt }}" width="{{ module.testimonial_3.author_image.width }}" height="{{ module.testimonial_3.author_image.height }}" />
-                                {% endif %}
-                            </div>
-                        {% endif %}
-                        
-                        <div class="testimonial-content">
-                            <p class="testimonial-quote">
-                                {{ module.testimonial_3.quote }}
-                            </p>
-                            
-                            {% if module.testimonial_3.author_info or module.testimonial_3.icon_class %}
-                                <div class="testimonial-author-info">
-                                    {% if module.testimonial_3.icon_class %}
-                                        <div class="card-icon">
-                                            <i class="{{ module.testimonial_3.icon_class }}"></i>
-                                        </div>
-                                    {% endif %}
-                                    {% if module.testimonial_3.author_info %}
-                                        <p class="testimonial-author">
-                                            {{ module.testimonial_3.author_info }}
-                                        </p>
-                                    {% endif %}
-                                </div>
-                            {% endif %}
-                        </div>
-                    </div>
-                {% endif %}
-                
+                {% endfor %}
             </div>
         {% endif %}
     </div>
