@@ -1,0 +1,13 @@
+{
+  "label" : "Kick it - About",
+  "preview_path" : "./templates/Home-Page.html",
+  "screenshot_path" : "./images/dark-free-theme-preview.png",
+  "enable_domain_stylesheets" : false,
+  "version" : "2",
+  "author" : {
+    "name" : "FastestThemes",
+    "email" : "support@fastestthemes.com",
+    "url" : "https://fastestthemes.com/"
+  },
+  "example_url" : "https://7712601.hs-sites.com/free-homepage"
+}

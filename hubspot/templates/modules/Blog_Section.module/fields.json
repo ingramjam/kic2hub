@@ -1,0 +1,340 @@
+[ {
+  "id" : "is_live",
+  "name" : "is_live",
+  "label" : "Do you want to show this Section?",
+  "help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "bg_color",
+  "name" : "bg_color",
+  "label" : "Background color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_live",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#17171d",
+    "opacity" : 100
+  }
+}, {
+  "id" : "section_heading",
+  "name" : "section_heading",
+  "label" : "Section Heading",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_live",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "<h2>Latest Update on Blog</h2>"
+}, {
+  "id" : "description",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_live",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet.</p>"
+}, {
+  "id" : "border_color",
+  "name" : "border_color",
+  "label" : "Border Background color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_live",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#ea384d",
+    "opacity" : 100
+  }
+}, {
+  "id" : "Blog_box",
+  "name" : "Blog_box",
+  "label" : "Blog Group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 4,
+    "max" : null,
+    "sorting_label_field" : "",
+    "default" : 4
+  },
+  "visibility" : {
+    "controlling_field" : "is_live",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "blog_box_bg",
+    "name" : "blog_box_bg",
+    "label" : "Blog box background color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#121212",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "service_box_border",
+    "name" : "service_box_border",
+    "label" : "Service box border color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#c9c9c9",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "blog_image",
+    "name" : "blog_image",
+    "label" : "Blog Image",
+    "help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "is_live",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent00.net/hubfs/7712601/blog-1.png",
+      "alt" : null
+    }
+  }, {
+    "id" : "service_text",
+    "name" : "service_heading",
+    "label" : "service Heading",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "is_live",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "<h5>Blog post one</h5>"
+  }, {
+    "id" : "blog_des",
+    "name" : "blog_des",
+    "label" : "Blog Description Text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "is_live",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Join our community to interact with other members and grow your network. We have a diverse client base "
+  }, {
+    "id" : "blog-link-text",
+    "name" : "blog_link_text",
+    "label" : "Blog Link Text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "is_live",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Read More"
+  }, {
+    "id" : "blog_link",
+    "name" : "Blog_link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "blog_box_bg" : {
+      "color" : "#121212",
+      "opacity" : 100
+    },
+    "service_box_border" : {
+      "color" : "#c9c9c9",
+      "opacity" : 100
+    },
+    "blog_image" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent00.net/hubfs/7712601/blog-1.png",
+      "alt" : null
+    },
+    "service_heading" : "<h5>Blog post one</h5>",
+    "blog_des" : "Join our community to interact with other members and grow your network. We have a diverse client base ",
+    "blog_link_text" : "Read More",
+    "Blog_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "blog_box_bg" : {
+      "color" : "#121212",
+      "opacity" : 100
+    },
+    "service_box_border" : {
+      "color" : "#c9c9c9",
+      "opacity" : 100
+    },
+    "blog_image" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent00.net/hubfs/7712601/blog-1.png",
+      "alt" : null
+    },
+    "service_heading" : "<h5>Blog post one</h5>",
+    "blog_des" : "Join our community to interact with other members and grow your network. We have a diverse client base ",
+    "blog_link_text" : "Read More",
+    "Blog_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "blog_box_bg" : {
+      "color" : "#121212",
+      "opacity" : 100
+    },
+    "service_box_border" : {
+      "color" : "#c9c9c9",
+      "opacity" : 100
+    },
+    "blog_image" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent00.net/hubfs/7712601/blog-1.png",
+      "alt" : null
+    },
+    "service_heading" : "<h5>Blog post one</h5>",
+    "blog_des" : "Join our community to interact with other members and grow your network. We have a diverse client base ",
+    "blog_link_text" : "Read More",
+    "Blog_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "blog_box_bg" : {
+      "color" : "#121212",
+      "opacity" : 100
+    },
+    "service_box_border" : {
+      "color" : "#c9c9c9",
+      "opacity" : 100
+    },
+    "blog_image" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent00.net/hubfs/7712601/blog-1.png",
+      "alt" : null
+    },
+    "service_heading" : "<h5>Blog post one</h5>",
+    "blog_des" : "Join our community to interact with other members and grow your network. We have a diverse client base ",
+    "blog_link_text" : "Read More",
+    "Blog_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ]
+} ]

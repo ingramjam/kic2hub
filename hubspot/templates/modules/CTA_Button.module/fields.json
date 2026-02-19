@@ -1,0 +1,174 @@
+[ {
+  "id" : "is_live",
+  "name" : "is_live",
+  "label" : "Do you want to show this Section?",
+  "help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "background_color",
+  "name" : "background_color",
+  "label" : "Background color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_live",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#010101",
+    "opacity" : 100
+  }
+}, {
+  "id" : "text_position",
+  "name" : "text_position",
+  "label" : "Text align",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_live",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "left", "Text Left" ], [ "center", "Text center" ], [ "right", "Text right" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "center"
+}, {
+  "id" : "section_heading",
+  "name" : "section_heading",
+  "label" : "Section Heading",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_live",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Install DARK Free Theme"
+}, {
+  "id" : "section_subheading",
+  "name" : "section_subheading",
+  "label" : "Section Sub-Heading",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_live",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+}, {
+  "id" : "button_choice",
+  "name" : "button_choice",
+  "label" : "Select what you want - Link or CTA?",
+  "help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_live",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "cta", "CTA" ], [ "link", "Link" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "link"
+}, {
+  "id" : "button_text",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "button_choice",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "link",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Request Access"
+}, {
+  "id" : "button_link",
+  "name" : "button_link",
+  "label" : "Button Link",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "button_choice",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "link",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "cta",
+  "name" : "cta_field",
+  "label" : "CTA",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "button_choice",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "cta",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "cta",
+  "display_width" : null,
+  "default" : ""
+} ]

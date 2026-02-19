@@ -1,0 +1,137 @@
+{% if module.is_live %}
+<div class="video-banner" >
+  <div id="bannner">
+  {% if module.background_choice == 'colors' %}
+  <div class="banner-bg color-option" style="background-color:{{ module.bg_color.color }};min-height:{{ module.banner_height }}px;">
+    <div class="container">
+      <div class="row"> 
+        <div class="offset-md-1 col-md-10 col-sm-12 col-xs-12">
+          <div class="banner-content" style="text-align:{{ module.text_position }}">
+            <h1>{{ module.section_heading }}</h1>
+            <div class="subheading">
+              {{ module.section_subheading }}
+            </div>
+             {% if module.is_button %}
+            <div class="buttons">
+            	{% if module.button_choice == 'cta' %}
+            	<div class="cta_btn button">
+            		{% cta guid="{{ module.cta_field }}" %}
+            	</div>
+            	{% else %}
+            	<div class="link_btn">
+            		<a class="button" href="{{ module.button_link.href }}">{{ module.button_text }}</a>
+            	</div>
+            	{% endif %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% elif module.background_choice == 'static_image' %}
+    <div class="banner-bg color-option" style="background:url({{ module.static_img.src }});min-height:{{ module.banner_height }}px;">
+        {% if module.is_want %}
+        <div class="banner-overlay1" style="background-color:rgba({{ module.overlay_color.color|convert_rgb }},{{ module.overlay_color.opacity / 100 }});"></div>
+      {% endif %}
+      <div class="container">
+        <div class="row">
+          <div class="offset-md-1 col-md-10 col-sm-12 col-xs-12">
+              <div class="banner-content" style="text-align: {{ module.text_position }}">
+            <h1>{{ module.section_heading }}</h1>
+            <div class="subheading">
+              {{ module.section_subheading }}
+            </div>
+             {% if module.is_button %}
+             <div class="buttons">
+            	{% if module.button_choice == 'cta' %}
+            	<div class="cta_btn button">
+            		{% cta guid="{{ module.cta_field }}" %}
+            	</div>
+            	{% else %}
+            	<div class="link_btn">
+            		<a class="button" href="{{ module.button_link.href }}">{{ module.button_text }}</a>
+            	</div>
+            	{% endif %}
+            </div>
+            {% endif %}
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+       {% elif module.background_choice == 'parallax_image' %}
+    <div class="banner-bg parallax" style="background:url({{ module.parallax_img.src }});min-height:{{ module.banner_height }}px;">
+        {% if module.is_want %}
+       <div class="banner-overlay1" style="background-color:rgba({{ module.overlay_color.color|convert_rgb }},{{ module.overlay_color.opacity / 100 }});"></div>
+      {% endif %}
+      <div class="container">
+        <div class="row">
+          <div class="offset-md-1 col-md-10 col-sm-12 col-xs-12">
+              <div class="banner-content" style="text-align: {{ module.text_position }};">
+            <h1>{{ module.section_heading }}</h1>
+            <div class="subheading">
+              {{ module.section_subheading }}
+            </div>
+             {% if module.is_button %}
+             <div class="buttons">
+            	{% if module.button_choice == 'cta' %}
+            	<div class="cta_btn button" >
+            		{% cta guid="{{ module.cta_field }}" %}
+            	</div>
+            	{% else %}
+            	<div class="link_btn">
+            		<a class="button" href="{{ module.button_link.href }}">{{ module.button_text }}</a>
+            	</div>
+            	{% endif %}
+            </div>
+             {% endif %}
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  {% else %}
+  <div class="banner-bg video-option" style="height:{{ module.banner_height }}px;">
+     <div class="banner-overlay1" style="background-color:rgba({{ module.overlay_color.color|convert_rgb }},{{ module.overlay_color.opacity / 100 }});"></div>
+    <video playsinline autoplay muted loop>
+      <source src="{{ module.background_video }}" type="video/mp4">
+    </video>
+      {% if module.is_want %}
+     <div class="banner-overlay1" style="background-color:rgba({{ module.overlay_color.color|convert_rgb }},{{ module.overlay_color.opacity / 100 }});"></div>
+    {% endif %}
+    <div class="container">
+      <div class="row">
+        <div class=" offset-md-1 col-md-10 col-sm-12 col-xs-12">
+           <div class="banner-content" style="text-align: {{ module.text_position }};">
+            <h1>{{ module.section_heading }}</h1>
+            <div class="subheading">
+              {{ module.section_subheading }}
+            </div>
+            {% if module.is_button %}
+             <div class="buttons">
+            	{% if module.button_choice == 'cta' %}
+            	<div class="cta_btn" class="button">
+            		{% cta guid="{{ module.cta_field }}" %}
+            	</div>
+            	{% else %}
+            	<div class="link_btn">
+            		<a class="button" href="{{ module.button_link.href }}">{{ module.button_text }}</a>
+            	</div>
+            	{% endif %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  </div>
+  {% endif %}
+</div>
+</div>
+{% endif %}
+
+

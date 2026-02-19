@@ -1,0 +1,30 @@
+{% if module.show_hide %}
+<div class="about-webinar" id="register" style="background:{{ module.background_color.color }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 col-md-6 col-12">
+        <div class="left-content">
+          <h2>{{ module.heading }}</h2>
+           <div class="description-text"><p>{{ module.description }}</p></div> 
+         <div>
+          {{ module.list_text }}
+          </div>
+         </div>
+      </div>
+      <div class="col-lg-5 col-md-6 col-12">
+        <div class="right-content">
+          <h3>{{ module.form_heading }}</h3>
+          {% form
+	form_to_use="{{ module.form_field.form_id }}"
+	response_response_type="{{ module.form_field.response_type }}"
+	response_message="{{ module.form_field.message }}"
+	response_redirect_id="{{ module.form_field.redirect_id }}"
+	response_redirect_url="{{module.form_field.redirect_url}}"
+	gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

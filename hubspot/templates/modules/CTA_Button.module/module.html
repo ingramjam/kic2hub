@@ -1,0 +1,24 @@
+{% if module.is_live %}
+<div class="button-strip" style="background: {{ module.background_color.color }}">
+	<div class="container" data-aos="fade-up" data-aos-duration="3000">
+    <div class="heading" style="text-align: {{ module.text_position }}">
+      <h3>{{ module.section_heading }}</h3>
+      <div class="description">{{ module.section_subheading }}</div>  
+    
+    </div>
+  
+<div class="strip_buttons" style="text-align: {{ module.text_position }}" data-aos="fade-up" data-aos-duration="3000">
+            	{% if module.button_choice == 'cta' %}
+            	<div class="cta_btn button">
+            		{% cta guid="{{ module.cta_field }}" %}
+            	</div>
+            	{% else %}
+            	<div class="link_btn">
+            		<a class="button" href="{{ href }}">{{ module.button_text }}</a>
+            	</div>
+            	{% endif %}
+            </div>
+	</div>
+</div>
+{% endif %}
+

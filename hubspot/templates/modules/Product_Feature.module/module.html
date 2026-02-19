@@ -1,0 +1,28 @@
+{% if module.is_live %}
+<div class="service-3" style="background:{{ module.bg_color.color }}">
+  <div class="container" data-aos="fade-up" data-aos-duration="3000">
+    <div class="heading">
+      <h2>{{ module.section_heading }}</h2>
+      <div class="description">{{ module.description }}</div>
+       <div class="separator" style="background:{{ module.border_color.color }}"></div>
+    </div>
+  </div>
+  <div class="container" data-aos="fade-up" data-aos-duration="3000">
+   <div class="row">
+   {% for item in module.service_box %}
+     <div class="col-md-4 col-sm-6 col-12">
+       <div class="services_box" style="background:{{ item.service_box_bg.color }};border-color:{{ item.service_box_border.color }}; ">
+         <div class="service-icons" style="background:{{ item.icon_background.color }}">
+         <i class="fa fa-{{ item.icon_field.name }}" style="color:{{ item.icon_color.color }};" aria-hidden="true"></i>
+         </div>
+         <div class="bx-content">
+          {{ item.service_heading }}
+           <div style="font-family: {{ item.Description_font.font }}; {{ item.Description_font.style }}; color: {{ item.Description_font.color }}; font-size: {{ item.Description_font.size }}{{item.Description_font.size_unit }};">{{ item.service_des }}</div> 
+         </div>
+       </div>
+     </div>
+     {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}

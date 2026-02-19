@@ -1,0 +1,127 @@
+{#
+  Module: Interactive Quit Planner
+  Updates: Step 1 title/icon structure to match Step 2, styling for App Promo section.
+#}
+
+{% set section_bg_color = module.style.section_bg_color.color|default(theme.body.background_color) %}
+{% set card_bg_color = module.style.card_bg_color.color|default(theme.components.background_color) %}
+{% set padding_top = module.style.padding_top|default(48) %}
+{% set padding_bottom = module.style.padding_bottom|default(64) %}
+
+<div class="interactive-quit-planner-module scroll-animate" style="background-color: {{ section_bg_color }}; padding-top: {{ padding_top }}px; padding-bottom: {{ padding_bottom }}px;">
+    <div class="container mx-auto px-6 lg:px-10">
+        <h1 class="text-3xl md:text-4xl font-semibold mb-4 text-center text-theme-text">{{ module.main_headline|default("Interactive Quit Planner") }}</h1>
+        <p class="content-paragraph text-center mb-12 text-apple-gray-medium">{{ module.main_introduction|default("Build your personalized roadmap to a healthier, tobacco/vape-free life. Select your strategies, set your goals, and create a plan you can commit to.") }}</p>
+
+        {# --- STEP 1: FOUNDATION --- #}
+        <section id="step1-foundation-{{ name }}" class="mb-12">
+            <h2 class="section-title">Step 1: Your Foundation</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                {# Card 1.1 #}
+                <div class="card p-6 rounded-xl shadow-lg" style="background-color: {{ card_bg_color }};">
+                    {# MODIFIED: Changed h3 to h4, card-icon to tip-icon class #}
+                    <h4 class="text-lg font-semibold mb-3 flex items-center"><i class="fas fa-ban tip-icon"></i>What are you quitting?</h4>
+                    <div class="space-y-1">
+                        <div class="checklist-item"><input type="checkbox" id="quit_smoking-{{ name }}" name="quit_type" value="Cigarettes"><label for="quit_smoking-{{ name }}">Cigarettes</label></div>
+                        <div class="checklist-item"><input type="checkbox" id="quit_vaping-{{ name }}" name="quit_type" value="Vaping / E-Cigarettes"><label for="quit_vaping-{{ name }}">Vaping / E-Cigarettes</label></div>
+                        <div class="checklist-item"><input type="checkbox" id="quit_smokeless-{{ name }}" name="quit_type" value="Smokeless Tobacco (chew, dip, snus)"><label for="quit_smokeless-{{ name }}">Smokeless Tobacco</label></div>
+                        <div class="checklist-item"><input type="checkbox" id="quit_marijuana-{{ name }}" name="quit_type" value="Marijuana (especially with tobacco)"><label for="quit_marijuana-{{ name }}">Marijuana (with tobacco)</label></div>
+                    </div>
+                </div>
+                {# Card 1.2 #}
+                <div class="card p-6 rounded-xl shadow-lg" style="background-color: {{ card_bg_color }};">
+                    {# MODIFIED: Changed h3 to h4, card-icon to tip-icon class #}
+                    <h4 class="text-lg font-semibold mb-3 flex items-center"><i class="fas fa-calendar-alt tip-icon"></i>Set Your Quit Date</h4>
+                    <input type="date" id="quitDate-{{ name }}" name="quitDate" class="form-input mb-2">
+                    <p class="text-xs text-apple-gray-medium">Choosing a specific date gives you a clear goal.</p>
+                </div>
+            </div>
+            {# Card 1.3 #}
+            <div class="mt-6 card p-6 rounded-xl shadow-lg" style="background-color: {{ card_bg_color }};">
+                {# MODIFIED: Changed h3 to h4, card-icon to tip-icon class #}
+                <h4 class="text-lg font-semibold mb-3 flex items-center"><i class="fas fa-heart tip-icon"></i>My Reasons for Quitting</h4>
+                <textarea id="reasons-{{ name }}" name="reasons" rows="3" class="form-textarea" placeholder="E.g., My health, my family, saving money..."></textarea>
+                <p class="text-xs mt-2 text-apple-gray-medium">List your powerful motivators. These will be your anchor.</p>
+            </div>
+        </section>
+
+        {# --- STEP 2: PREPARATION STRATEGIES --- #}
+        <section id="step2-prepare-{{ name }}" class="mb-12">
+            <h2 class="section-title">Step 2: Preparation Strategies</h2>
+            <p class="content-paragraph text-center mb-6">Select the actions you'll take before your quit date:</p>
+            <div class="tip-card space-y-3" style="background-color: {{ card_bg_color }};">
+                <h4><i class="fas fa-tasks tip-icon"></i>Choose Your Prep Steps:</h4>
+                <div class="checklist-item"><input type="checkbox" id="prep_triggers-{{ name }}" value="Identify my common triggers (people, places, feelings) and plan to avoid/manage them."><label for="prep_triggers-{{ name }}">Identify my triggers & plan to manage them.</label></div>
+                <div class="checklist-item"><input type="checkbox" id="prep_cravings-{{ name }}" value="Learn the 4 D's (Delay, Deep Breathe, Drink Water, Do Something Else) for cravings."><label for="prep_cravings-{{ name }}">Plan for cravings (e.g., 4 D's, healthy snacks, fidget toys).</label></div>
+                <div class="checklist-item"><input type="checkbox" id="prep_support-{{ name }}" value="Tell friends and family about my quit date and ask for their specific support."><label for="prep_support-{{ name }}">Inform my support system (friends, family) and ask for help.</label></div>
+                <div class="checklist-item"><input type="checkbox" id="prep_nrt-{{ name }}" value="Talk to my doctor or a Kick It CA Quit Coach about NRT or other quit medications."><label for="prep_nrt-{{ name }}">Explore NRT/quit medications with a doctor or Quit Coach.</label></div>
+                <div class="checklist-item"><input type="checkbox" id="prep_environment-{{ name }}" value="Remove all tobacco/vape products and accessories from my home, car, and work."><label for="prep_environment-{{ name }}">Clean my environment: remove all products & accessories.</label></div>
+                <div class="checklist-item"><input type="checkbox" id="prep_alternatives-{{ name }}" value="Stock up on healthy alternatives (gum, mints, crunchy snacks, water)."><label for="prep_alternatives-{{ name }}">Stock up on healthy alternatives (gum, water, snacks).</label></div>
+            </div>
+        </section>
+
+        {# --- STEP 3: QUIT DAY & EARLY WEEKS --- #}
+        <section id="step3-quitday-{{ name }}" class="mb-12">
+            <h2 class="section-title">Step 3: Quit Day & Early Weeks</h2>
+            <p class="content-paragraph text-center mb-6">Select how you'll navigate the initial phase:</p>
+            <div class="tip-card space-y-3" style="background-color: {{ card_bg_color }};">
+                <h4><i class="fas fa-shield-alt tip-icon"></i>Coping During the First Weeks:</h4>
+                <div class="checklist-item"><input type="checkbox" id="cope_withdraw-{{ name }}" value="Acknowledge that withdrawal symptoms are temporary signs of healing and be patient with myself."><label for="cope_withdraw-{{ name }}">Acknowledge withdrawal symptoms are temporary; be patient.</label></div>
+                <div class="checklist-item"><input type="checkbox" id="cope_benefits-{{ name }}" value="Focus on the immediate health benefits I'm experiencing."><label for="cope_benefits-{{ name }}">Focus on immediate benefits (better breathing, taste/smell).</label></div>
+                <div class="checklist-item"><input type="checkbox" id="cope_stress-{{ name }}" value="Use healthy stress-management techniques (exercise, meditation, hobbies)."><label for="cope_stress-{{ name }}">Practice healthy stress management (exercise, hobbies).</label></div>
+                <div class="checklist-item"><input type="checkbox" id="cope_routine-{{ name }}" value="Change routines associated with use (e.g., after meals, with coffee)."><label for="cope_routine-{{ name }}">Change routines previously linked to tobacco/vape use.</label></div>
+                <div class="checklist-item" data-conditional="quit_marijuana"><input type="checkbox" id="cope_marijuana-{{ name }}" value="If quitting marijuana with tobacco, be mindful of dual cravings and develop new non-use routines."><label for="cope_marijuana-{{ name }}">Manage dual cravings if quitting marijuana & tobacco together.</label></div>
+            </div>
+        </section>
+
+        {# --- STEP 4: STAYING QUIT --- #}
+        <section id="step4-stayquit-{{ name }}" class="mb-12">
+            <h2 class="section-title">Step 4: Staying Quit for Good</h2>
+            <p class="content-paragraph text-center mb-6">Choose your long-term strategies for success:</p>
+            <div class="tip-card space-y-3" style="background-color: {{ card_bg_color }};">
+                <h4><i class="fas fa-flag-checkered tip-icon"></i>Long-Term Success Strategies:</h4>
+                <div class="checklist-item"><input type="checkbox" id="stay_slips-{{ name }}" value="Understand that a slip is not a failure; recommit to my plan immediately if it happens."><label for="stay_slips-{{ name }}">Handle slips by learning and recommitting, not giving up.</label></div>
+                <div class="checklist-item"><input type="checkbox" id="stay_rewards-{{ name }}" value="Celebrate milestones (days, weeks, months quit) with healthy rewards."><label for="stay_rewards-{{ name }}">Celebrate milestones with healthy, non-tobacco rewards.</label></div>
+                <div class="checklist-item"><input type="checkbox" id="stay_habits-{{ name }}" value="Continue to build and reinforce new healthy habits."><label for="stay_habits-{{ name }}">Build and reinforce new healthy habits and routines.</label></div>
+                <div class="checklist-item"><input type="checkbox" id="stay_support_longterm-{{ name }}" value="Stay connected with my support system or a Quit Coach for ongoing encouragement."><label for="stay_support_longterm-{{ name }}">Maintain connection with my support system or Quit Coach.</label></div>
+                <div class="checklist-item" data-conditional="quit_vaping"><input type="checkbox" id="stay_vaping_challenges-{{ name }}" value="For vaping: continue to manage behavioral cues and be aware of high nicotine dependence."><label for="stay_vaping_challenges-{{ name }}">Address unique vaping challenges (behavioral cues, high nicotine).</label></div>
+            </div>
+        </section>
+
+        {# --- PLAN SUMMARY --- #}
+        <section id="planSummarySection-{{ name }}" class="mb-12 text-center" style="background-color: {{ card_bg_color }}; padding: 1.5rem 2rem; border-radius: 0.75rem; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+            <h2 class="section-title">My Personalized Quit Plan</h2>
+            <div id="planSummaryContent-{{ name }}" class="mb-6 text-sm text-left"> 
+                <p class="text-center text-apple-gray-medium">{{ module.summary_placeholder|default("Your plan will appear here as you make selections.") }}</p>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button id="emailPlanBtn-{{ name }}" class="cta-button py-3 px-6 text-base font-semibold"><i class="fas fa-envelope mr-2"></i>{{ module.button_email_text|default("Email My Plan") }}</button>
+                <button id="copyPlanBtn-{{ name }}" class="cta-button bg-theme-success hover:bg-green-600 py-3 px-6 text-base font-semibold"><i class="fas fa-copy mr-2"></i>{{ module.button_copy_text|default("Copy My Plan") }}</button>
+            </div>
+            <p id="copyFeedback-{{ name }}" class="text-center text-sm text-theme-success mt-3 h-4"></p>
+        </section>
+
+        {# --- APP PROMO --- #}
+        {# MODIFIED: background-color set to use module field for card_bg_color (light) #}
+        <section id="quit-app-promo-{{ name }}" class="text-center scroll-animate" style="background-color: {{ card_bg_color }}; border-radius: 0.75rem; padding: 2rem 1.5rem; margin-bottom: 3rem; box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div class="max-w-3xl mx-auto"> 
+            <i class="fas fa-mobile-alt text-5xl mb-6" style="color: var(--primary-color);"></i>
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4" style="color: var(--text-color);">Take Your Plan On The Go!</h2>
+            <p class="text-lg md:text-xl mb-8" style="color: var(--apple-gray-medium);">Download the free Kick It California app for 24/7 support, progress tracking, craving management tools, and direct access to quit coaches. It’s your pocket companion for a smoke-free life.</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4"> 
+                <a href="https://apps.apple.com/us/app/kick-it-california-quit-app/id1525235815" target="_blank" rel="noopener noreferrer" class="app-store-badge"> <i class="fab fa-apple text-2xl mr-3"></i> <span>App Store</span> </a> 
+                <a href="https://play.google.com/store/apps/details?id=org.ctcp.kickitca.production" target="_blank" rel="noopener noreferrer" class="app-store-badge"> <i class="fab fa-google-play text-xl mr-3"></i> <span>Google Play</span> </a> 
+            </div>
+            <p class="mt-6"><a href="app-information.html" class="text-theme-link hover:underline">More App Information & FAQs</a></p> 
+          </div>
+        </section>
+
+        {# --- FINAL CTA --- #}
+        <section class="text-center py-10 mt-12 bg-theme-card-bg rounded-xl shadow-xl scroll-animate" style="background-color: {{ card_bg_color }};">
+          <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-theme-primary">Ready to Take Control?</h2>
+            <p class="content-paragraph mb-6">You've built your plan. Now, let us support you in making it a reality. Free, expert help is available.</p>
+            <a href="../index.html#intake" class="cta-button text-lg py-3 px-8 rounded-lg font-semibold">GET FREE QUIT COACHING</a>
+            <p class="mt-4 text-sm text-apple-gray-medium">Or call <a href="tel:1-800-300-8086" class="text-theme-link hover:underline font-semibold">1-800-300-8086</a>.</p>
+        </section>
+    </div>
+</div>

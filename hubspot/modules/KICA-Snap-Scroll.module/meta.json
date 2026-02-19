@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "content_types" : [ "KNOWLEDGE_BASE", "LANDING_PAGE", "SITE_PAGE", "CUSTOMER_PORTAL", "WEB_INTERACTIVE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 215913644772,
+  "label" : "Snap Panels",
+  "is_available_for_new_content" : true
+}

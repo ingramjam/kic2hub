@@ -1,0 +1,30 @@
+/* --- PROVEN APPROACH MODULE (HORIZONTAL SCROLL FEATURE CARDS - from your original) --- */
+/* ... other styles for .horizontal-scroll-container-cards ... */
+
+.horizontal-scroll-container-cards .feature-card {
+    /* Define the CSS Custom Property we intend to set via HubL, with a fallback */
+    --card-background-color: white; /* Default background if not set by HubL */
+
+    background-color: var(--card-background-color); /* <<<< CHANGED TO MATCH HUBL OUTPUT */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    width: 200px; /* This was original, adjust if you want it to be like the other cards */
+}
+
+/* ... rest of the styles for .horizontal-scroll-container-cards .feature-card elements ... */
+/* Ensure icon, h3, p colors use your global theme variables directly as per our last simplification */
+.horizontal-scroll-container-cards .feature-card .icon {
+    color: var(--theme-secondary-color); /* Or your preferred global var like --secondary */
+}
+.horizontal-scroll-container-cards .feature-card h3 {
+    color: var(--theme-primary-color); /* Or your preferred global var like --primary */
+}
+.horizontal-scroll-container-cards .feature-card p {
+    color: var(--theme-text-muted-default); /* Or your preferred global var like --text-muted */
+}

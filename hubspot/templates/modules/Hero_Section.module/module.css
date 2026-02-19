@@ -1,0 +1,93 @@
+.bannner{position:relative;}
+.banner-bg {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.banner-bg.parallax{background-attachment: fixed !important;}
+.banner-overlay1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index:1;
+  
+}
+.ragistr {
+  padding: 10px 43px;
+  border-radius: 3px;
+}
+.banner-content {
+  position: relative;
+  z-index: 1;
+  margin-top: 50px;
+}
+
+.banner-content h1 {
+  text-transform: capitalize;
+  margin-bottom: 15px;
+  line-height:45px;
+}
+.banner-content h1 b {
+  color: #FF8057 !important;
+}
+.buttons{padding-top:40px;}
+.video-option video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  left: 0;
+  top: 0;
+}
+
+.subheading {
+  line-height: 30px;
+  display: inline-block;
+  margin-bottom: 15px;
+  width:70%;
+  margin:auto;
+}
+
+
+@media (min-width:768px) and (max-width:991px) {
+  .banner-bg {
+    min-height:500px !important;
+  }
+  .banner-content h1 {
+    width: 100%;
+    font-size: 35px !important;
+    line-height: 35px;
+    margin-bottom: 5px;
+  }
+  .banner-content {
+    margin-top: 0;
+  }
+ 
+  .subheading {
+    margin-bottom: 0px;
+    width:85% !important ;
+  }
+
+}
+@media (max-width:767px) {
+  .banner-content {
+    margin-bottom:40px;
+    margin-top: 100px;
+    text-align:center;
+  }
+  .banner-content h1 {
+    width: 100%;
+    font-size:25px !important;}
+  .banner-img {
+    margin-bottom: 40px;
+  }
+  .banner-bg{min-height:400px !important}
+  .subheading{margin-bottom:20px !important;width:100% !important}
+}
+
+
+

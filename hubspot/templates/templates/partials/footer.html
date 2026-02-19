@@ -1,0 +1,53 @@
+<!--
+  templateType: global_partial
+  label: Footer
+-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-12">
+        <div class="logo-content">
+            {% module 'site_logo' path='@hubspot/logo', label='Header Logo', img={src=" {{ get_asset_url('../../images/Dark-logo-small.png') }}", width=150, override_inherited_src=true, alt='Dark Theme'}  %}
+          {% module_block module "contact_us" path="@hubspot/rich_text" label="contact_us" %}
+         {% module_attribute "html" %}
+          <p>Making any business reach to it’s full potenial by our expert solutions and advice trending with today’s market. Making any business reach to it’s full potenial by our expert solutions and advice trending with today’s market.</p>
+         {% end_module_attribute %}
+         {% end_module_block %}
+        </div>
+      </div>
+      <div class="col-md-1 col-12"></div>
+       <div class="col-md-6 col-12 footer-heading">
+           {% module_block module 'footer_menu-heading1' path='@hubspot/text' %}
+         {% module_attribute 'html' %}About Us{% end_module_attribute %}
+      {% end_module_block %}
+        {% module "footer_menu1" path="@hubspot/menu" label="Footer menu block1",id="33525594128",flow="vertical" %}
+      </div>
+     </div>
+  </div>
+  <div class="footer__container content-wrapper">
+
+    {# Social follow section #}
+    {% module_block module 'footer_social' path='../../modules/Social_Follow',
+      label='Social follow'
+    %}
+      {% module_attribute 'social_link' is_json=True %}
+        [
+          {"social_account": "facebook-f"},
+          {"social_account": "linkedin-in"},
+          {"social_account": "twitter"},
+          {"social_account": "instagram"}
+        ]
+      {% end_module_attribute %}
+    {% end_module_block %}
+    {# End social follow section #}
+
+    {# Copyright information section #}
+    <div class="footer__copyright">
+      {% module_block module 'footer_copyright_text' path='@hubspot/text' %}
+        {% module_attribute 'value' %}© {{ year }} All rights reserved.{% end_module_attribute %}
+      {% end_module_block %}
+    </div>
+    {# End copyright information section #}
+
+  </div>
+</footer>

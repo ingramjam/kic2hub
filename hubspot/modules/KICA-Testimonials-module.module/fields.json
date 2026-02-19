@@ -1,0 +1,144 @@
+[ {
+  "id" : "a6203d11-88b5-cc11-009f-c1e732a5370f",
+  "name" : "section_headline",
+  "label" : "Section Headline",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+}, {
+  "id" : "e2220c0f-0f34-c74b-ccec-081c40679454",
+  "name" : "section_introduction",
+  "label" : "Section Introduction",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null
+}, {
+  "id" : "f42ad0aa-e574-3913-8667-b70d99f18124",
+  "name" : "testimonial_1",
+  "label" : "Testimonial 1",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "3bb68fb0-f689-a5de-9cbc-49f2573d36dd",
+    "name" : "icon_class",
+    "label" : "Icon Class (Font Awesome)",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "fas fa-comments"
+  }, {
+    "id" : "b803959a-f20d-7475-c489-17d421a449e6",
+    "name" : "quote",
+    "label" : "Quote",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null
+  }, {
+    "id" : "9da7a56a-81c5-9132-26d9-cbf849fe4a20",
+    "name" : "author_info",
+    "label" : "Author Name & Location",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "icon_class" : "fas fa-comments"
+  }
+}, {
+  "id" : "ccff672f-10fa-ea67-1fb8-0e981b419315",
+  "name" : "testimonial_2",
+  "label" : "Testimonial 2",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "db3b652a-9686-ffa5-a136-b92a33c75e31",
+    "name" : "icon_class",
+    "label" : "Icon Class (Font Awesome)",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "fas fa-comments"
+  }, {
+    "id" : "812f0c42-16e0-60fa-661b-8bc2018432d2",
+    "name" : "quote",
+    "label" : "Quote",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null
+  }, {
+    "id" : "dacd1193-e5e6-6d1e-ccaa-0c842906d26a",
+    "name" : "author_info",
+    "label" : "Author Name & Location",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "icon_class" : "fas fa-comments"
+  }
+}, {
+  "id" : "c0954a65-c3c7-43e8-f683-d5b1b9dd8102",
+  "name" : "testimonial_3",
+  "label" : "Testimonial 3",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "0d24e518-897d-9bf4-6716-99959a7aba44",
+    "name" : "icon_class",
+    "label" : "Icon Class (Font Awesome)",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "fas fa-comments"
+  }, {
+    "id" : "aac0ba08-8f77-c1b0-1c61-30ed13845f39",
+    "name" : "quote",
+    "label" : "Quote",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null
+  }, {
+    "id" : "a17de95b-5e42-bc0a-b575-20393728d5c9",
+    "name" : "author_info",
+    "label" : "Author Name & Location",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "icon_class" : "fas fa-comments"
+  }
+} ]

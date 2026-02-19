@@ -1,0 +1,6 @@
+.button-strip{padding:100px 0px }
+
+@media(max-width: 767px){
+	.description{width: 100%}
+	.button-strip{padding:60px 0px }
+}

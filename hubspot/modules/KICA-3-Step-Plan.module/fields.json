@@ -1,0 +1,197 @@
+[ {
+  "id" : "39d86e0f-b735-23ec-981f-8b86b28562fd",
+  "name" : "section_super_title",
+  "label" : "Section Super TItle",
+  "required" : false,
+  "locked" : false,
+  "placeholder" : "Your Path to Quitting",
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+}, {
+  "id" : "478d204c-3029-a499-0c27-5e3c13b6fa36",
+  "name" : "section_main_title",
+  "label" : "Section Main Title",
+  "required" : false,
+  "locked" : false,
+  "placeholder" : "Kick It 3-Step Plan",
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "1b61272b-43c2-e04c-0dd3-8d41730495c4",
+  "name" : "step_1",
+  "label" : "Step 1",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "63ad7422-e12b-732a-2097-e2b3dd21cc39",
+    "name" : "front_image",
+    "label" : "Front Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "9de52069-a390-f46d-d529-d48d7ea3d7df",
+    "name" : "step_title",
+    "label" : "Step Title",
+    "required" : false,
+    "locked" : false,
+    "placeholder" : "1. Set Your Quit Date",
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "65a7d3ce-3d9e-eaba-4f49-fb7b931f009a",
+    "name" : "back_text",
+    "label" : "Back Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "How many times have you said, “I’m going to quit” and then not gotten around to it? Setting an official Quit Date (with smaller goals along the way) helps your plan feel real and makes you more likely to follow through."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "front_image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "back_text" : "How many times have you said, “I’m going to quit” and then not gotten around to it? Setting an official Quit Date (with smaller goals along the way) helps your plan feel real and makes you more likely to follow through."
+  }
+}, {
+  "id" : "7ff93ed4-3448-afdd-52db-a7fac5bd4421",
+  "name" : "step_2",
+  "label" : "Step 2",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "763f3834-92b3-888c-2cc9-111d380d1031",
+    "name" : "front_image",
+    "label" : "Front Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "b05cd9b0-19cc-6aff-7c62-b2b6cf8d332d",
+    "name" : "step_title",
+    "label" : "Step Title",
+    "required" : false,
+    "locked" : false,
+    "placeholder" : "2. Identify Your Triggers",
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "2ef528d1-3f49-db52-6250-df30d5a6c988",
+    "name" : "back_text",
+    "label" : "Back Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "Triggers are people, places, or situations that make you want to smoke (for instance, smoking on work breaks). The more you understand these triggers, the easier it is to deal with them. So it’s important to figure out what your personal triggers are."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "front_image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "step_title" : "",
+    "back_text" : "Triggers are people, places, or situations that make you want to smoke (for instance, smoking on work breaks). The more you understand these triggers, the easier it is to deal with them. So it’s important to figure out what your personal triggers are."
+  }
+}, {
+  "id" : "7718abf1-23bc-f5c3-f509-d591d25d3ce8",
+  "name" : "step_3",
+  "label" : "Step 3",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "72a28962-13be-f587-6557-7e3652b14605",
+    "name" : "front_image",
+    "label" : "Front Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "05261e0e-dee8-8a01-ee4c-d777a2ce4914",
+    "name" : "step_title",
+    "label" : "Step Title",
+    "required" : false,
+    "locked" : false,
+    "placeholder" : "3. Make a Plan",
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "a4b80987-4efe-19db-669c-aef7b3abe1ab",
+    "name" : "back_text",
+    "label" : "Back Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "Finally, you’ll need some ways to handle your triggers. That could be calling a friend, chewing gum, or reminding yourself why you want to quit. A Quit Coach will help you come up with strategies that will work for you."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "front_image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "step_title" : "",
+    "back_text" : "Finally, you’ll need some ways to handle your triggers. That could be calling a friend, chewing gum, or reminding yourself why you want to quit. A Quit Coach will help you come up with strategies that will work for you."
+  }
+} ]

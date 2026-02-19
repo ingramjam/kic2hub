@@ -1,0 +1,333 @@
+[ {
+  "id" : "is_live",
+  "name" : "is_live",
+  "label" : "Do you want to show this Section?",
+  "help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "bg_color",
+  "name" : "bg_color",
+  "label" : "Background color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_live",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#17171d",
+    "opacity" : 100
+  }
+}, {
+  "id" : "section_heading",
+  "name" : "section_heading",
+  "label" : "Section Heading",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_live",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "<h2>Here's why we're best</h2>"
+}, {
+  "id" : "description",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_live",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>"
+}, {
+  "id" : "border_color",
+  "name" : "border_color",
+  "label" : "Border Background color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "is_live",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#ea384d",
+    "opacity" : 100
+  }
+}, {
+  "id" : "service_box",
+  "name" : "service_box",
+  "label" : "Service Group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 3,
+    "max" : 6,
+    "sorting_label_field" : "",
+    "default" : 3
+  },
+  "visibility" : {
+    "controlling_field" : "is_live",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "service_box_bg",
+    "name" : "service_box_bg",
+    "label" : "Service box background color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#17171d",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "service_icon",
+    "name" : "icon_field",
+    "label" : "Service Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "is_live",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "bars",
+      "unicode" : "f0c9",
+      "type" : "SOLID"
+    }
+  }, {
+    "id" : "icon_background",
+    "name" : "icon_background",
+    "label" : "Icon box background color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ea384d",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "icon_color",
+    "name" : "icon_color",
+    "label" : "Icon color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "service_box_border",
+    "name" : "service_box_border",
+    "label" : "Service box border color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ccc",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "service_text",
+    "name" : "service_heading",
+    "label" : "service Heading",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "is_live",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "<h5>Feature</h5>"
+  }, {
+    "id" : "service_des",
+    "name" : "service_des",
+    "label" : "Service Description Text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "is_live",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Add your feature description here. Add your feature description here. Add your feature description here. Add your feature description here. "
+  }, {
+    "id" : "description_font",
+    "name" : "Description_font",
+    "label" : "Description Font",
+    "required" : false,
+    "locked" : false,
+    "load_external_fonts" : true,
+    "type" : "font",
+    "display_width" : null,
+    "default" : {
+      "size" : 15,
+      "font" : "Montserrat",
+      "font_set" : "GOOGLE",
+      "size_unit" : "px",
+      "color" : "#cccccc",
+      "styles" : { }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "service_box_bg" : {
+      "color" : "#17171d",
+      "opacity" : 100
+    },
+    "icon_field" : {
+      "name" : "bars",
+      "unicode" : "f0c9",
+      "type" : "SOLID"
+    },
+    "icon_background" : {
+      "color" : "#ea384d",
+      "opacity" : 100
+    },
+    "icon_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "service_box_border" : {
+      "color" : "#ccc",
+      "opacity" : 100
+    },
+    "service_heading" : "<h5>Feature</h5>",
+    "service_des" : "Add your feature description here. Add your feature description here. Add your feature description here. Add your feature description here. ",
+    "Description_font" : {
+      "size" : 15,
+      "font" : "Montserrat",
+      "font_set" : "GOOGLE",
+      "size_unit" : "px",
+      "color" : "#cccccc",
+      "styles" : { }
+    }
+  }, {
+    "service_box_bg" : {
+      "color" : "#17171d",
+      "opacity" : 100
+    },
+    "icon_field" : {
+      "name" : "bars",
+      "unicode" : "f0c9",
+      "type" : "SOLID"
+    },
+    "icon_background" : {
+      "color" : "#ea384d",
+      "opacity" : 100
+    },
+    "icon_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "service_box_border" : {
+      "color" : "#ccc",
+      "opacity" : 100
+    },
+    "service_heading" : "<h5>Feature</h5>",
+    "service_des" : "Add your feature description here. Add your feature description here. Add your feature description here. Add your feature description here. ",
+    "Description_font" : {
+      "size" : 15,
+      "font" : "Montserrat",
+      "font_set" : "GOOGLE",
+      "size_unit" : "px",
+      "color" : "#cccccc",
+      "styles" : { }
+    }
+  }, {
+    "service_box_bg" : {
+      "color" : "#17171d",
+      "opacity" : 100
+    },
+    "icon_field" : {
+      "name" : "bars",
+      "unicode" : "f0c9",
+      "type" : "SOLID"
+    },
+    "icon_background" : {
+      "color" : "#ea384d",
+      "opacity" : 100
+    },
+    "icon_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "service_box_border" : {
+      "color" : "#ccc",
+      "opacity" : 100
+    },
+    "service_heading" : "<h5>Feature</h5>",
+    "service_des" : "Add your feature description here. Add your feature description here. Add your feature description here. Add your feature description here. ",
+    "Description_font" : {
+      "size" : 15,
+      "font" : "Montserrat",
+      "font_set" : "GOOGLE",
+      "size_unit" : "px",
+      "color" : "#cccccc",
+      "styles" : { }
+    }
+  } ]
+} ]

@@ -1,0 +1,57 @@
+<!--
+  templateType: global_partial
+  label: Website header
+-->
+<header class="header">
+  <div class="header__container content-wrapper">
+
+    {# Header logo column #}
+    <div class="header__logo header__logo--main">
+      {% module 'site_logo' path='@hubspot/logo', label='Header Logo', img={src=" {{ get_asset_url('../../images/Dark-logo-small.png') }}", width=200, override_inherited_src=true, alt='Dark Theme'}  %}
+    </div>
+   
+    {# End header logo column #}
+
+    {# Header navigation column #}
+    <div class="header__column">
+
+      {# Header navigation row one #}
+      <div class="header__row-1">
+        {% if content.translated_content|length %}
+          <div class="header__language-switcher header--element">
+            <div class="header__language-switcher--label">
+              {% module 'language-switcher' path='@hubspot/language_switcher',
+                label='Language switcher',
+                display_mode='localized'
+              %}
+              <div class="header__language-switcher--label-current"> {{ locale_name(locale) }}</div>
+            </div>
+          </div>
+        {% endif %}
+    
+      </div>
+      {# End header navigation row one #}
+
+      {# Header navigation row two #}
+      <div class="header__row-2">
+        <div class="header--toggle header__navigation--toggle"></div>
+        {% if content.translated_content|length %}
+          <div class="header--toggle header__language-switcher--toggle"></div>
+        {% endif %}
+       <div class="header__navigation header--element">
+          {% module 'navigation-primary' path='../../modules/Header_Menu',
+            label='Primary navigation'
+          %}
+        </div>
+      </div>
+      {# End header navigation row two #}
+
+    </div>
+    {# End header navigation column #}
+
+  </div>
+</header>
+
+
+
+

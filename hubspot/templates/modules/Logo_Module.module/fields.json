@@ -1,0 +1,29 @@
+[ {
+  "id" : "604c4d1d-0cdf-a156-dd4a-0d10852d07b8",
+  "name" : "main_logo",
+  "label" : "Main Logo",
+  "required" : false,
+  "locked" : false,
+  "show_loading" : false,
+  "type" : "logo",
+  "display_width" : null,
+  "default" : {
+    "override_inherited_src" : true,
+    "src" : "https://f.hubspotusercontent00.net/hubfs/7712601/Dark-logo-small.png",
+    "alt" : "Dark-logo-small",
+    "width" : 378,
+    "height" : 117
+  }
+}, {
+  "id" : "3720fc00-b005-3e90-275a-4e79125cb0ef",
+  "name" : "background_color",
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#010101",
+    "opacity" : 100
+  }
+} ]

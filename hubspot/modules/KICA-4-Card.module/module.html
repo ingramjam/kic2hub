@@ -1,0 +1,145 @@
+{#
+  Module: Proven Approach / Horizontal Scroll Feature Grid
+  Description: Displays a main title, subtitle, and a horizontally scrolling grid of feature cards on smaller screens,
+               which transitions to a standard grid on larger screens.
+#}
+
+{# Module style fields for the section #}
+{% set section_background_color = module.style.background_color.color %}
+{% set section_padding_top = module.style.padding_top %}
+{% set section_padding_bottom = module.style.padding_bottom %}
+
+<section class="py-16 md:py-24 scroll-animate"
+         style="{% if section_background_color %}background-color: {{ section_background_color }};{% endif %} {% if section_padding_top %}padding-top: {{ section_padding_top }}px;{% endif %} {% if section_padding_bottom %}padding-bottom: {{ section_padding_bottom }}px;{% endif %}">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+        {# Main Section Headline #}
+        {% if module.main_headline %}
+            <h2 class="section-title">{{ module.main_headline }}</h2>
+        {% endif %}
+
+        {# Main Section Subtitle #}
+        {% if module.main_subtitle %}
+            <p class="section-subtitle">{{ module.main_subtitle }}</p>
+        {% endif %}
+
+        {# Container for Feature Cards #}
+        <div class="horizontal-scroll-container-cards mt-12">
+
+            {# --- CARD 1 --- #}
+            {% if module.card_1.headline %} {# Assumes 'card_1' is your group for the first card's content & styles #}
+                {% set card_tag_1 = module.card_1.link.url.href ? 'a' : 'div' %}
+                {% set card_href_1 = module.card_1.link.url.href ? 'href="' ~ module.card_1.link.url.href ~ '"' : '' %}
+                {% set card_target_1 = module.card_1.link.open_in_new_tab ? 'target="_blank"' : '' %}
+                {% set card_rel_1 = module.card_1.link.rel ? 'rel="' ~ module.card_1.link.rel ~ '"' : '' %}
+
+                {% set card_1_styles = [] %}
+                {% if module.card_1.background_color.color %}{% do card_1_styles.append('--card-background-color: ' ~ module.card_1.background_color.color ~ ';') %}{% endif %}
+                {% if module.card_1.icon_color.color %}{% do card_1_styles.append('--card-icon-color: ' ~ module.card_1.icon_color.color ~ ';') %}{% endif %}
+                {% if module.card_1.headline_color.color %}{% do card_1_styles.append('--card-headline-color: ' ~ module.card_1.headline_color.color ~ ';') %}{% endif %}
+                {% if module.card_1.text_color.color %}{% do card_1_styles.append('--card-text-color: ' ~ module.card_1.text_color.color ~ ';') %}{% endif %}
+                {% if module.card_1.hover_headline_color.color %}{% do card_1_styles.append('--card-hover-headline-color: ' ~ module.card_1.hover_headline_color.color ~ ';') %}{% endif %}
+
+                <{{ card_tag_1 }} {{ card_href_1 }} {{ card_target_1 }} {{ card_rel_1 }} class="feature-card scroll-animate" style="{{ card_1_styles|join(' ') }}">
+                    {% if module.card_1.icon_class %}
+                        <div class="icon">
+                            <i class="{{ module.card_1.icon_class }}"></i>
+                        </div>
+                    {% endif %}
+                    {% if module.card_1.headline %}
+                        <h3>{{ module.card_1.headline }}</h3>
+                    {% endif %}
+                    {% if module.card_1.description %}
+                        <p>{{ module.card_1.description }}</p>
+                    {% endif %}
+                </{{ card_tag_1 }}>
+            {% endif %}
+
+            {# --- CARD 2 --- #}
+            {% if module.card_2.headline %} {# Assumes 'card_2' is your group #}
+                {% set card_tag_2 = module.card_2.link.url.href ? 'a' : 'div' %}
+                {% set card_href_2 = module.card_2.link.url.href ? 'href="' ~ module.card_2.link.url.href ~ '"' : '' %}
+                {% set card_target_2 = module.card_2.link.open_in_new_tab ? 'target="_blank"' : '' %}
+                {% set card_rel_2 = module.card_2.link.rel ? 'rel="' ~ module.card_2.link.rel ~ '"' : '' %}
+
+                {% set card_2_styles = [] %}
+                {% if module.card_2.background_color.color %}{% do card_2_styles.append('--card-background-color: ' ~ module.card_2.background_color.color ~ ';') %}{% endif %}
+                {% if module.card_2.icon_color.color %}{% do card_2_styles.append('--card-icon-color: ' ~ module.card_2.icon_color.color ~ ';') %}{% endif %}
+                {% if module.card_2.headline_color.color %}{% do card_2_styles.append('--card-headline-color: ' ~ module.card_2.headline_color.color ~ ';') %}{% endif %}
+                {% if module.card_2.text_color.color %}{% do card_2_styles.append('--card-text-color: ' ~ module.card_2.text_color.color ~ ';') %}{% endif %}
+                {% if module.card_2.hover_headline_color.color %}{% do card_2_styles.append('--card-hover-headline-color: ' ~ module.card_2.hover_headline_color.color ~ ';') %}{% endif %}
+
+                <{{ card_tag_2 }} {{ card_href_2 }} {{ card_target_2 }} {{ card_rel_2 }} class="feature-card scroll-animate" style="{{ card_2_styles|join(' ') }}">
+                    {% if module.card_2.icon_class %}
+                        <div class="icon">
+                            <i class="{{ module.card_2.icon_class }}"></i>
+                        </div>
+                    {% endif %}
+                    {% if module.card_2.headline %}
+                        <h3>{{ module.card_2.headline }}</h3>
+                    {% endif %}
+                    {% if module.card_2.description %}
+                        <p>{{ module.card_2.description }}</p>
+                    {% endif %}
+                </{{ card_tag_2 }}>
+            {% endif %}
+
+            {# --- CARD 3 --- #}
+            {% if module.card_3.headline %} {# Assumes 'card_3' is your group #}
+                {% set card_tag_3 = module.card_3.link.url.href ? 'a' : 'div' %}
+                {% set card_href_3 = module.card_3.link.url.href ? 'href="' ~ module.card_3.link.url.href ~ '"' : '' %}
+                {% set card_target_3 = module.card_3.link.open_in_new_tab ? 'target="_blank"' : '' %}
+                {% set card_rel_3 = module.card_3.link.rel ? 'rel="' ~ module.card_3.link.rel ~ '"' : '' %}
+
+                {% set card_3_styles = [] %}
+                {% if module.card_3.background_color.color %}{% do card_3_styles.append('--card-background-color: ' ~ module.card_3.background_color.color ~ ';') %}{% endif %}
+                {% if module.card_3.icon_color.color %}{% do card_3_styles.append('--card-icon-color: ' ~ module.card_3.icon_color.color ~ ';') %}{% endif %}
+                {% if module.card_3.headline_color.color %}{% do card_3_styles.append('--card-headline-color: ' ~ module.card_3.headline_color.color ~ ';') %}{% endif %}
+                {% if module.card_3.text_color.color %}{% do card_3_styles.append('--card-text-color: ' ~ module.card_3.text_color.color ~ ';') %}{% endif %}
+                {% if module.card_3.hover_headline_color.color %}{% do card_3_styles.append('--card-hover-headline-color: ' ~ module.card_3.hover_headline_color.color ~ ';') %}{% endif %}
+
+                <{{ card_tag_3 }} {{ card_href_3 }} {{ card_target_3 }} {{ card_rel_3 }} class="feature-card scroll-animate" style="{{ card_3_styles|join(' ') }}">
+                    {% if module.card_3.icon_class %}
+                        <div class="icon">
+                            <i class="{{ module.card_3.icon_class }}"></i>
+                        </div>
+                    {% endif %}
+                    {% if module.card_3.headline %}
+                        <h3>{{ module.card_3.headline }}</h3>
+                    {% endif %}
+                    {% if module.card_3.description %}
+                        <p>{{ module.card_3.description }}</p
+                    {% endif %}
+                </{{ card_tag_3 }}>
+            {% endif %}
+
+            {# --- CARD 4 --- #}
+            {% if module.card_4.headline %} {# Assumes 'card_4' is your group #}
+                {% set card_tag_4 = module.card_4.link.url.href ? 'a' : 'div' %}
+                {% set card_href_4 = module.card_4.link.url.href ? 'href="' ~ module.card_4.link.url.href ~ '"' : '' %}
+                {% set card_target_4 = module.card_4.link.open_in_new_tab ? 'target="_blank"' : '' %}
+                {% set card_rel_4 = module.card_4.link.rel ? 'rel="' ~ module.card_4.link.rel ~ '"' : '' %}
+
+                {% set card_4_styles = [] %}
+                {% if module.card_4.background_color.color %}{% do card_4_styles.append('--card-background-color: ' ~ module.card_4.background_color.color ~ ';') %}{% endif %}
+                {% if module.card_4.icon_color.color %}{% do card_4_styles.append('--card-icon-color: ' ~ module.card_4.icon_color.color ~ ';') %}{% endif %}
+                {% if module.card_4.headline_color.color %}{% do card_4_styles.append('--card-headline-color: ' ~ module.card_4.headline_color.color ~ ';') %}{% endif %}
+                {% if module.card_4.text_color.color %}{% do card_4_styles.append('--card-text-color: ' ~ module.card_4.text_color.color ~ ';') %}{% endif %}
+                {% if module.card_4.hover_headline_color.color %}{% do card_4_styles.append('--card-hover-headline-color: ' ~ module.card_4.hover_headline_color.color ~ ';') %}{% endif %}
+
+                <{{ card_tag_4 }} {{ card_href_4 }} {{ card_target_4 }} {{ card_rel_4 }} class="feature-card scroll-animate" style="{{ card_4_styles|join(' ') }}">
+                     {% if module.card_4.icon_class %}
+                        <div class="icon">
+                            <i class="{{ module.card_4.icon_class }}"></i>
+                        </div>
+                    {% endif %}
+                    {% if module.card_4.headline %}
+                        <h3>{{ module.card_4.headline }}</h3>
+                    {% endif %}
+                    {% if module.card_4.description %}
+                        <p>{{ module.card_4.description }}</p>
+                    {% endif %}
+                </{{ card_tag_4 }}>
+            {% endif %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,129 @@
+/* KICA-3-Step-Plan.module CSS */
+/* Scoped to this module instance using its data-module-id */
+
+/* Optional: Full width section breakout for the main section element */
+/* [data-module-id="{{name}}"].kica-3-step-plan-flip {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    box-sizing: border-box;
+} */
+
+/* The parent div with Tailwind class "flex flex-wrap justify-center gap-6 md:gap-8" handles card layout */
+
+[data-module-id="{{name}}"] .flip-card {
+    background-color: transparent; /* Card itself is a container */
+    width: 425px;
+    height: 425px;
+    max-width: 100%; /* So it can shrink on very small screens if needed */
+    perspective: 1200px; /* Increased for a more pronounced 3D effect */
+    cursor: pointer;
+    outline: none;
+    display: block; /* Or inline-block, flex will handle its placement */
+    border-radius: 0.75rem; /* Tailwind rounded-xl, apply to inner for clipping if needed */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Tailwind shadow-lg */
+    transition: box-shadow 0.3s ease-in-out;
+}
+[data-module-id="{{name}}"] .flip-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Tailwind shadow-xl */
+}
+
+
+[data-module-id="{{name}}"] .flip-card:focus-visible .flip-card-inner {
+    outline: 3px solid var(--c-orange, orange); /* Use your theme's orange or a default */
+    outline-offset: 2px;
+}
+
+[data-module-id="{{name}}"] .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother flip */
+    transform-style: preserve-3d;
+    border-radius: 0.75rem; /* To clip children */
+    overflow: hidden; /* To clip children by rounded corners */
+}
+
+[data-module-id="{{name}}"] .flip-card-inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+[data-module-id="{{name}}"] .flip-card-front,
+[data-module-id="{{name}}"] .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 1.5rem; /* Tailwind p-6 equivalent */
+}
+
+[data-module-id="{{name}}"] .flip-card-front {
+    background-color: var(--card-bg-color, #f0f0f0); /* Fallback background for front */
+    color: var(--text-color, #333); /* Fallback text color for placeholder */
+}
+
+[data-module-id="{{name}}"] .flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This is KEY for image sizing */
+    display: block; /* Remove extra space below image */
+}
+
+[data-module-id="{{name}}"] .flip-card-front .flip-card-placeholder {
+    /* Styles for the placeholder if no image is present */
+    /* The text itself uses Tailwind classes in the HTML */
+}
+[data-module-id="{{name}}"] .flip-card-front .placeholder-text {
+    font-size: 1.5rem; /* Example size */
+    font-weight: 600;
+    color: var(--text-color-muted-default, #666);
+}
+
+
+[data-module-id="{{name}}"] .flip-card-back {
+    background-color: var(--theme-primary-color, #002039); /* Using your theme variables */
+    color: var(--theme-text-on-primary, #FFFFFF);
+    transform: rotateY(180deg);
+    overflow-y: auto; /* In case content is too long */
+}
+
+[data-module-id="{{name}}"] .flip-card-back .card-back-title {
+    font-size: 1.5rem; /* Tailwind text-2xl approx */
+    font-weight: 600;  /* Tailwind font-semibold */
+    margin-bottom: 0.75rem; /* Tailwind mb-3 */
+    color: inherit; /* Inherits text-white from .flip-card-back */
+}
+
+[data-module-id="{{name}}"] .flip-card-back .card-back-description {
+    font-size: 0.875rem; /* Tailwind text-sm */
+    line-height: 1.5;  /* Tailwind leading-relaxed approx */
+    text-align: center;
+    color: inherit; /* Inherits text-white from .flip-card-back */
+}
+
+/* Styling for paragraphs if Rich Text field adds them */
+[data-module-id="{{name}}"] .flip-card-back .rich-text-on-card-back p {
+    margin-bottom: 0.75em;
+}
+[data-module-id="{{name}}"] .flip-card-back .rich-text-on-card-back p:last-child {
+    margin-bottom: 0;
+}
+
+/* Scroll animation for the overall section if class .scroll-animate is on the root section */
+[data-module-id="{{name}}"].scroll-animate { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
+}
+[data-module-id="{{name}}"].scroll-animate.is-visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+}

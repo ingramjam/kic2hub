@@ -1,0 +1,13 @@
+{
+  "global" : false,
+  "content_types" : [ "KNOWLEDGE_BASE", "QUOTE_TEMPLATE", "CASE_STUDY", "LANDING_PAGE", "SITE_PAGE", "SUBSCRIPTION", "CUSTOMER_PORTAL", "BLOG_LISTING", "WEB_INTERACTIVE", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 216173172436,
+  "other_assets" : [ {
+    "url" : "https://131650.fs1.hubspotusercontent-na2.net/hubfs/131650/fields.json",
+    "autoload" : false,
+    "name" : "fields.json"
+  } ],
+  "label" : "quit-planner",
+  "is_available_for_new_content" : true
+}

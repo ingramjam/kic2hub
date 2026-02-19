@@ -1,0 +1,96 @@
+{# Module: KICA 3-Step Plan - Flip Card Version (Revised) #}
+<section class="kica-3-step-plan-flip content-section py-16 md:py-24 bg-theme-bg" data-module-id="{{name}}">
+    <div class="container mx-auto px-6 text-center">
+        {% if module.section_super_title %}
+            <p class="text-base text-theme-secondary font-semibold tracking-wide uppercase mb-2">{{ module.section_super_title }}</p>
+        {% endif %}
+        {% if module.section_main_title %}
+            <h2 class="text-3xl md:text-4xl font-bold text-theme-primary mb-12 md:mb-16">{{ module.section_main_title }}</h2>
+        {% endif %}
+
+        {# Flex container for the flip cards. Handles wrapping and centering. #}
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8"> 
+            
+            {# Step 1 Card - Renders if step_title OR back_text exists #}
+            {% if module.step_1.step_title || module.step_1.back_text %}
+                <div class="flip-card" tabindex="0"> {# tabindex="0" makes it focusable for keyboard #}
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            {% if module.step_1.front_image.src %}
+                                <img src="{{ module.step_1.front_image.src }}" 
+                                     alt="{{ module.step_1.front_image.alt|default(module.step_1.step_title ~ ' front graphic') }}" 
+                                     loading="lazy">
+                            {% else %}
+                                <div class="flip-card-placeholder">
+                                    <span class="placeholder-text">{{ module.step_1.step_title|default('Step 1') }}</span>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="flip-card-back">
+                            {% if module.step_1.step_title %}
+                                <h3 class="card-back-title">{{ module.step_1.step_title }}</h3>
+                            {% endif %}
+                            {% if module.step_1.back_text %}
+                                <div class="card-back-description rich-text-on-card-back">{{ module.step_1.back_text }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {# Step 2 Card - Renders if step_title OR back_text exists #}
+            {% if module.step_2.step_title || module.step_2.back_text %}
+                <div class="flip-card" tabindex="0">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            {% if module.step_2.front_image.src %}
+                                <img src="{{ module.step_2.front_image.src }}" 
+                                     alt="{{ module.step_2.front_image.alt|default(module.step_2.step_title ~ ' front graphic') }}" 
+                                     loading="lazy">
+                            {% else %}
+                                <div class="flip-card-placeholder">
+                                    <span class="placeholder-text">{{ module.step_2.step_title|default('Step 2') }}</span>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="flip-card-back">
+                            {% if module.step_2.step_title %}
+                                <h3 class="card-back-title">{{ module.step_2.step_title }}</h3>
+                            {% endif %}
+                            {% if module.step_2.back_text %}
+                                <div class="card-back-description rich-text-on-card-back">{{ module.step_2.back_text }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {# Step 3 Card - Renders if step_title OR back_text exists #}
+            {% if module.step_3.step_title || module.step_3.back_text %}
+                <div class="flip-card" tabindex="0">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                           {% if module.step_3.front_image.src %}
+                                <img src="{{ module.step_3.front_image.src }}" 
+                                     alt="{{ module.step_3.front_image.alt|default(module.step_3.step_title ~ ' front graphic') }}" 
+                                     loading="lazy">
+                            {% else %}
+                                <div class="flip-card-placeholder">
+                                     <span class="placeholder-text">{{ module.step_3.step_title|default('Step 3') }}</span>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="flip-card-back">
+                            {% if module.step_3.step_title %}
+                                <h3 class="card-back-title">{{ module.step_3.step_title }}</h3>
+                            {% endif %}
+                            {% if module.step_3.back_text %}
+                                <div class="card-back-description rich-text-on-card-back">{{ module.step_3.back_text }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

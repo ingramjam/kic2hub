@@ -1,0 +1,71 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: About Us
+  screenshotPath: ../images/template-previews/about-us-page.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block body %}
+<main class="body-container-wrapper">
+  {% dnd_area "dnd_areaabout" class='body-container', label='Main section' %}
+	
+		{% dnd_section 
+		  padding={
+				'top': 0,
+				'bottom': 0,
+				'left': 0,
+				'right': 0
+			},
+			full_width=true
+		%}
+   {% dnd_module 'Hero_Section' 
+				path='./../modules/Hero_Section.module',
+				label="DARK_Hero_Section",
+				width=12
+			%}
+		
+				
+			{% end_dnd_module %}
+		{% end_dnd_section %}
+ 
+  {% dnd_section 
+		  padding={
+				'top': 0,
+				'bottom': 0,
+				'left': 0,
+				'right': 0
+			},
+			full_width=true
+		%}
+   {% dnd_module 'Product_Feature' 
+				path='./../modules/Product_Feature.module',
+				label="Product_Feature",
+				width=12
+			%}
+
+			{% end_dnd_module %}
+		{% end_dnd_section %}
+  
+  {% dnd_section 
+		  padding={
+				'top': 0,
+				'bottom': 0,
+				'left': 0,
+				'right': 0
+			},
+			full_width=true
+		%}
+   {% dnd_module 'CTA_Button' 
+				path='./../modules/CTA_Button.module',
+				label="CTA_Button",
+				width=12
+			%}
+				
+			{% end_dnd_module %}
+		{% end_dnd_section %}
+  
+  {% end_dnd_area %}
+   
+</main>
+{% endblock body %}

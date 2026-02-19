@@ -1,0 +1,95 @@
+[ {
+  "id" : "639594d9-c126-b463-98c8-788340d9419c",
+  "name" : "show_hide",
+  "label" : "Show/Hide",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "24e3a644-fa94-bda4-7543-64b669dfbba2",
+  "name" : "background_color",
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#17171d",
+    "opacity" : 100
+  }
+}, {
+  "id" : "a18c6061-63e1-74ce-78e0-2777fa302a16",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Contact Us"
+}, {
+  "id" : "1694a57e-6eb9-1b82-6218-1d54b4c250e1",
+  "name" : "heading_font",
+  "label" : "Heading Font",
+  "required" : false,
+  "locked" : false,
+  "load_external_fonts" : true,
+  "type" : "font",
+  "display_width" : null,
+  "default" : {
+    "size" : 30,
+    "size_unit" : "px",
+    "color" : "#FFFFFF",
+    "styles" : { },
+    "font" : "Montserrat",
+    "fallback" : "sans-serif",
+    "variant" : "700",
+    "font_set" : "GOOGLE"
+  }
+}, {
+  "id" : "0ac6858b-e125-3f0a-5aba-235ddc4d51c6",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Lorem ipsum dolor sit amet, consecteturadipiscingelit, sed do eiusmodtemporincididuntutlabore et dolore magna aliqua. Ut enim ad minim veniam, quisnostrud exercitation ullamcolaboris nisi utaliquip ex eacommodoconsequat. Duis auteirure dolor in reprehenderit in voluptatevelitessecillum dolore .</p>"
+}, {
+  "id" : "89f0a9d6-2969-08f0-be16-5dc0723dbbc6",
+  "name" : "list_text",
+  "label" : "List Text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<ul>\n<li>Inbound marketing strategies</li>\n<li>Improve sales conversions</li>\n<li>Inbound marketing strategies</li>\n<li>Improve sales conversions</li>\n<li>Inbound marketing strategies</li>\n<li>Q&amp;A session</li>\n</ul>"
+}, {
+  "id" : "09c29a55-c726-1cad-7466-900c3ac3d36a",
+  "name" : "form_heading",
+  "label" : "Form Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "c54dd1af-da91-36b2-090f-503fd080a29e",
+  "name" : "form_field",
+  "label" : "Form",
+  "required" : false,
+  "locked" : false,
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "form_id" : "789f2e3d-c32b-41d7-bcaa-51a6bd8db34b",
+    "response_type" : "inline",
+    "message" : "Thanks for submitting the form.",
+    "gotowebinar_webinar_key" : null,
+    "form_type" : "HUBSPOT"
+  }
+} ]

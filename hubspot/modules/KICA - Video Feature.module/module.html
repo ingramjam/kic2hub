@@ -1,0 +1,62 @@
+{#
+  Module: Video Feature Section
+  Correction: Added 'video-feature-layout-grid' class for explicit CSS targeting.
+#}
+
+{% set background_color = module.style.background_color.color %}
+{% set padding_top = module.style.padding_top %}
+{% set padding_bottom = module.style.padding_bottom %}
+
+<section class="py-16 md:py-24 scroll-animate" style="background-color: {{ background_color }}; padding-top: {{ padding_top }}px; padding-bottom: {{ padding_bottom }}px;">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-10">
+        
+        {# Breadcrumbs #}
+        {% if module.parent_page.link %}
+            <nav aria-label="Breadcrumb" class="breadcrumb-nav mb-8">
+                <a href="{{ module.parent_page.link }}">{{ module.parent_page.text }}</a> &gt; <span class="current-page">{{ name }}</span>
+            </nav>
+        {% endif %}
+
+        {# ADDED 'video-feature-layout-grid' class here #}
+        <div class="video-feature-layout-grid sm:items-center">
+            
+            {# Left Column: Text Content #}
+            <div class="video-feature-text-content">
+                {% if module.icon_class %}
+                    <div class="card-icon text-4xl mb-4 text-theme-secondary">
+                        <i class="{{ module.icon_class }}"></i>
+                    </div>
+                {% endif %}
+
+                {% if module.headline %}
+                    <h2 class="section-title text-left mb-4">{{ module.headline }}</h2>
+                {% endif %}
+                
+                {% if module.description %}
+                    <p class="section-subtitle text-left !max-w-full mb-8">{{ module.description }}</p>
+                {% endif %}
+
+                {% if module.button.text && module.button.link.href %}
+                    <a href="{{ module.button.link.href }}" 
+                       class="btn btn-primary"
+                       {% if module.button.link.open_in_new_tab %}target="_blank"{% endif %}>
+                       {{ module.button.text }}
+                    </a>
+                {% endif %}
+            </div>
+            
+            {# Right Column: Video Embed #}
+            {% if module.video.player_id %}
+                <div class="video-container video-feature-video-content mt-8 sm:mt-0">
+                    {% video
+                        player_id={{ module.video.player_id }},
+                        type="{{ module.video.type }}",
+                        width="100%",
+                        height="100%",
+                        conversion_asset_id="{{ module.video.conversion_asset_id }}"
+                    %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

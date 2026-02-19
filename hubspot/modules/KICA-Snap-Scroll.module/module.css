@@ -1,0 +1,201 @@
+(function() {
+    // Ensures this runs after the DOM is fully loaded
+    // Note: If this script is placed at the end of your <body>, DOMContentLoaded might not be strictly necessary,
+    // but it's good practice if the script could be placed elsewhere (e.g., in <head> or loaded async).
+    // For HubSpot modules, scripts are often self-contained and might run as soon as they are rendered.
+    // If you are including this directly in a module's JS file or <script> tag at the end of the module HTML,
+    // you can often omit the DOMContentLoaded wrapper. Given our previous scripts, let's keep it consistent.
+
+    const snapContainer = document.getElementById('support-options-snap-container');
+    const indicatorsContainer = document.getElementById('snap-indicators');
+    
+    if (!snapContainer || !indicatorsContainer) {
+        // console.warn("Snap Scroll Module: Snap container or indicators container not found.");
+        return; // Exit if essential elements are missing
+    }
+
+    const sections = Array.from(snapContainer.querySelectorAll('.snap-section-card'));
+    
+    if (sections.length === 0) {
+        // console.warn("Snap Scroll Module: No .snap-section-card elements found.");
+        indicatorsContainer.style.display = 'none'; // Hide indicators container if there are no sections
+        return;
+    }
+    
+    indicatorsContainer.innerHTML = ''; // Clear any existing indicators (e.g., if JS re-runs or for editor preview)
+
+    sections.forEach((section, index) => {
+        if (!section.id) {
+            // console.warn(`Snap Scroll Module: Snap section at index ${index} is missing an ID. Indicator cannot be created.`);
+            return; // Skip sections without an ID, as indicators need a target
+        }
+        const indicator = document.createElement('a');
+        indicator.href = `#${section.id}`; // Creates an anchor link for the indicator
+        // Try to get a meaningful label from the headline, otherwise use a generic one
+        const headlineElement = section.querySelector('h3');
+        const ariaLabel = headlineElement ? `Go to ${headlineElement.textContent.trim()}` : `Go to section ${index + 1}`;
+        indicator.setAttribute('aria-label', ariaLabel);
+        indicatorsContainer.appendChild(indicator);
+
+        indicator.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default anchor jump behavior
+            const targetSection = document.getElementById(section.id);
+            if (targetSection) {
+                // Calculate scroll position relative to the snapContainer's own scrollable area
+                const targetScrollTop = targetSection.offsetTop - snapContainer.offsetTop;
+                snapContainer.scrollTo({
+                    top: targetScrollTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    const indicators = Array.from(indicatorsContainer.querySelectorAll('a'));
+    if (indicators.length === 0) {
+        // console.warn("Snap Scroll Module: No indicators were created (likely due to all sections missing IDs).");
+        indicatorsContainer.style.display = 'none'; // Hide container if no indicators were made
+        return; 
+    }
+
+    // --- Observer for individual sections (to highlight active dot & control video) ---
+    const sectionObserverOptions = {
+        root: snapContainer, // Intersection is relative to the snapContainer's scrollable viewport
+        threshold: 0.55,     // 55% of the section must be visible within the snapContainer
+                             // Adjust this threshold as needed for when you want a section to be "active"
+    };
+
+    let currentActiveIndicator = null;
+    let currentlyActiveSectionElement = null;
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const sectionId = entry.target.id;
+            if (!sectionId) return;
+
+            const correspondingIndicator = indicatorsContainer.querySelector(`a[href="#${sectionId}"]`);
+            const videoElement = entry.target.querySelector('.card-bg-video');
+
+            if (!correspondingIndicator) return;
+
+            if (entry.isIntersecting) {
+                // Deactivate previously active indicator and section's video
+                if (currentActiveIndicator && currentActiveIndicator !== correspondingIndicator) {
+                    currentActiveIndicator.classList.remove('active');
+                }
+                if (currentlyActiveSectionElement && currentlyActiveSectionElement !== entry.target) {
+                    const prevVideo = currentlyActiveSectionElement.querySelector('.card-bg-video');
+                    if (prevVideo && typeof prevVideo.pause === 'function' && !prevVideo.paused) {
+                        prevVideo.pause();
+                        // console.log('Paused video in previous section:', currentlyActiveSectionElement.id);
+                    }
+                }
+                
+                // Activate current indicator and section
+                correspondingIndicator.classList.add('active');
+                currentActiveIndicator = correspondingIndicator;
+                currentlyActiveSectionElement = entry.target;
+
+                // Play video in current section if it exists and is paused
+                if (videoElement && typeof videoElement.play === 'function' && videoElement.paused) {
+                    videoElement.play().catch(error => {
+                        // console.warn(`Snap Scroll Module: Video play prevented for section ${sectionId}:`, error);
+                    });
+                    // console.log('Played video in current section:', sectionId);
+                }
+            } else {
+                // Section is NOT intersecting
+                // Remove active class only if it's this specific indicator that is no longer active
+                // This prevents other active indicators from being deactivated if multiple entries are processed
+                if (correspondingIndicator.classList.contains('active')) {
+                     correspondingIndicator.classList.remove('active');
+                     // If this was the globally tracked active indicator, nullify it
+                     if(currentActiveIndicator === correspondingIndicator) currentActiveIndicator = null;
+                }
+                // If this was the globally tracked active section, nullify it
+                if (currentlyActiveSectionElement === entry.target) currentlyActiveSectionElement = null;
+
+                // Pause video if it exists and is playing
+                if (videoElement && typeof videoElement.pause === 'function' && !videoElement.paused) {
+                    videoElement.pause();
+                    // console.log('Paused video in non-intersecting section:', sectionId);
+                }
+            }
+        });
+    }, sectionObserverOptions);
+
+    sections.forEach(section => {
+        if (section.id) { // Only observe sections that have an ID
+            sectionObserver.observe(section);
+        }
+    });
+    
+    // --- Set initial active indicator and play initial video (if any) ---
+    // Use a small timeout to allow the browser to complete initial layout and scrolling.
+    setTimeout(() => {
+        let initialSectionInView = null;
+        for (let i = 0; i < sections.length; i++) {
+            const section = sections[i];
+            const rect = section.getBoundingClientRect();
+            const containerRect = snapContainer.getBoundingClientRect();
+            
+            // Check if a significant portion of the section is visible within the snapContainer's viewport
+            // This condition might need tweaking based on your layout and desired behavior
+            const visibleTop = Math.max(rect.top, containerRect.top);
+            const visibleBottom = Math.min(rect.bottom, containerRect.bottom);
+            const visibleHeight = visibleBottom - visibleTop;
+
+            if (visibleHeight > section.offsetHeight * 0.50) { // More than 50% of the section is visible
+                initialSectionInView = section;
+                break;
+            }
+        }
+
+        if (!initialSectionInView && sections.length > 0 && snapContainer.scrollTop < sections[0].offsetHeight * 0.1) {
+            // Fallback: if nothing is significantly in view but we're at the top, activate the first section
+            initialSectionInView = sections[0];
+        }
+
+        if (initialSectionInView && initialSectionInView.id) {
+            const firstVisibleIndicator = indicatorsContainer.querySelector(`a[href="#${initialSectionInView.id}"]`);
+            if (firstVisibleIndicator && !currentActiveIndicator) { 
+                firstVisibleIndicator.classList.add('active');
+                currentActiveIndicator = firstVisibleIndicator;
+                currentlyActiveSectionElement = initialSectionInView;
+                
+                const initialVideo = initialSectionInView.querySelector('.card-bg-video');
+                if (initialVideo && typeof initialVideo.play === 'function' && initialVideo.paused) {
+                    initialVideo.play().catch(error => {
+                        // console.warn(`Snap Scroll Module: Initial video play prevented for section ${initialSectionInView.id}:`, error);
+                    });
+                    // console.log('Played video in initial section:', initialSectionInView.id);
+                }
+            }
+        }
+    }, 200); // Increased timeout slightly for stability
+
+    // --- Observer for the snapContainer itself (to show/hide all indicators) ---
+    // This makes indicators appear only when the whole snap section is somewhat visible on the page.
+    const containerObserverOptions = {
+        root: null, // Observe intersection with the main browser viewport
+        threshold: 0.1 // 0.1 means at least 10% of the snapContainer needs to be visible
+                       // Adjust as needed. 0 would mean any pixel, 1 means fully visible.
+    };
+
+    const containerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Snap container is in view, show indicators
+                indicatorsContainer.style.opacity = '1';
+                indicatorsContainer.style.visibility = 'visible';
+            } else {
+                // Snap container is NOT in view, hide indicators
+                indicatorsContainer.style.opacity = '0';
+                indicatorsContainer.style.visibility = 'hidden';
+            }
+        });
+    }, containerObserverOptions);
+
+    containerObserver.observe(snapContainer);
+
+})(); // Immediately Invoked Function Expression (IIFE) to keep scope clean

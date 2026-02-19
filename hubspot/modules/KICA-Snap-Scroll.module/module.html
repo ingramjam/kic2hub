@@ -1,0 +1,138 @@
+<div id="support-options-snap-container" class="relative">
+    <div id="snap-indicators">
+        {# JavaScript will populate this #}
+    </div>
+
+    {# ---- START DEBUG FOR PANEL 1 (New URL Field) ---- #}
+    {# ---- END DEBUG FOR PANEL 1 (New URL Field) ---- #}
+
+    {# --- PANEL 1 --- #}
+    {% if module.panel_1.headline %}
+        <section class="snap-section-card" id="{{ module.panel_1.section_id }}">
+            <div class="card-background-layer">
+                {# MODIFIED: Using the new direct URL field #}
+                {% if module.panel_1.background_type == "video" and module.panel_1.panel_1_direct_video_url.href %} 
+                    <video class="card-bg-video" 
+                           src="{{ module.panel_1.panel_1_direct_video_url.href }}" {# Using .href for URL field object #}
+                           {# Poster can still try to come from the old video field if it had one, or the image field #}
+                           {% if module.panel_1.background_video.poster_url %}poster="{{ module.panel_1.background_video.poster_url }}"{% elif module.panel_1.background_image.src %}poster="{{ module.panel_1.background_image.src }}"{% endif %}
+                           autoplay loop muted playsinline
+                           aria-label="Background video for {{ module.panel_1.headline }}">
+                        Your browser does not support the video tag.
+                    </video>
+                {% elif module.panel_1.background_type == "image" and module.panel_1.background_image.src %}
+                    <div class="card-bg-image" style="background-image: url('{{ module.panel_1.background_image.src }}');"></div>
+                {% elif module.panel_1.background_type == "color" and module.panel_1.background_color.color %}
+                    <div class="card-bg-color" style="background-color: {{ module.panel_1.background_color.color }};"></div>
+                {% else %}
+                    {# Default fallback #}
+                    <div class="card-bg-color" style="background-color: #333333;"></div> 
+                {% endif %}
+            </div>
+            
+            <div class="snap-section-card-content-wrapper">
+                {% if module.panel_1.panel_icon_class %}
+                    <div class="card-icon text-4xl mb-3">
+                        <i class="{{ module.panel_1.panel_icon_class }}"></i>
+                    </div>
+                {% endif %}
+                <h3 class="text-2xl font-semibold mb-2">{{ module.panel_1.headline }}</h3>
+                {% if module.panel_1.description %}<p class="text-base leading-relaxed mb-4">{{ module.panel_1.description }}</p>{% endif %}
+                {% if module.panel_1.button_text && module.panel_1.button_link.href %}
+                    <a href="{{ module.panel_1.button_link.href }}" 
+                       class="cta-button text-sm font-semibold py-2 px-4 rounded-lg" 
+                       {% if module.panel_1.button_link.open_in_new_tab %}target="_blank"{% endif %}>
+                        {{ module.panel_1.button_text }}
+                    </a>
+                {% endif %}
+            </div>
+        </section>
+    {% endif %}
+    {# --- END OF PANEL 1 --- #}
+
+    {# --- PANEL 2, 3, 4 (These would also need a similar new URL field and HubL update if you want video for them) --- #}
+    {# For now, their video logic still uses module.panel_X.background_video.url #}
+    {# You can update them similarly if Panel 1 works with the new field #}
+
+    {% if module.panel_2.headline %}
+        <section class="snap-section-card" id="{{ module.panel_2.section_id }}">
+            <div class="card-background-layer">
+                 {% if module.panel_2.background_type == "video" and module.panel_2.panel_2_direct_video_url.href %} 
+                    <video class="card-bg-video" 
+                           src="{{ module.panel_2.panel_2_direct_video_url.href }}" {# Using .href for URL field object #}
+                           {# Poster can still try to come from the old video field if it had one, or the image field #}
+                           {% if module.panel_2.background_video.poster_url %}poster="{{ module.panel_2.background_video.poster_url }}"{% elif module.panel_2.background_image.src %}poster="{{ module.panel_2.background_image.src }}"{% endif %}
+                           autoplay loop muted playsinline
+                           aria-label="Background video for {{ module.panel_2.headline }}">
+                        Your browser does not support the video tag.
+                    </video>
+                {% elif module.panel_2.background_type == "image" and module.panel_2.background_image.src %}
+                    <div class="card-bg-image" style="background-image: url('{{ module.panel_2.background_image.src }}');"></div>
+                {% elif module.panel_2.background_type == "color" and module.panel_2.background_color.color %}
+                    <div class="card-bg-color" style="background-color: {{ module.panel_2.background_color.color }};"></div>
+                {% else %}<div class="card-bg-color" style="background-color: #333333;"></div>{% endif %}
+            </div>
+            <div class="snap-section-card-content-wrapper">
+                {% if module.panel_2.panel_icon_class %}<div class="card-icon text-4xl mb-3"><i class="{{ module.panel_2.panel_icon_class }}"></i></div>{% endif %}
+                <h3 class="text-2xl font-semibold mb-2">{{ module.panel_2.headline }}</h3>
+                {% if module.panel_2.description %}<p class="text-base leading-relaxed mb-4">{{ module.panel_2.description }}</p>{% endif %}
+                {% if module.panel_2.button_text && module.panel_2.button_link.href %}<a href="{{ module.panel_2.button_link.href }}" class="cta-button text-sm font-semibold py-2 px-4 rounded-lg" {% if module.panel_2.button_link.open_in_new_tab %}target="_blank"{% endif %}>{{ module.panel_2.button_text }}</a>{% endif %}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if module.panel_3.headline %}
+        <section class="snap-section-card" id="{{ module.panel_3.section_id }}">
+            <div class="card-background-layer">
+                {% if module.panel_3.background_type == "video" and module.panel_3.panel_3_direct_video_url.href %} 
+                    <video class="card-bg-video" 
+                           src="{{ module.panel_3.panel_3_direct_video_url.href }}" {# Using .href for URL field object #}
+                           {# Poster can still try to come from the old video field if it had one, or the image field #}
+                           {% if module.panel_3.background_video.poster_url %}poster="{{ module.panel_3.background_video.poster_url }}"{% elif module.panel_3.background_image.src %}poster="{{ module.panel_3.background_image.src }}"{% endif %}
+                           autoplay loop muted playsinline
+                           aria-label="Background video for {{ module.panel_3.headline }}">
+                        Your browser does not support the video tag.
+                    </video>
+                {% elif module.panel_3.background_type == "image" and module.panel_3.background_image.src %}
+                    <div class="card-bg-image" style="background-image: url('{{ module.panel_3.background_image.src }}');"></div>
+                {% elif module.panel_3.background_type == "color" and module.panel_3.background_color.color %}
+                    <div class="card-bg-color" style="background-color: {{ module.panel_3.background_color.color }};"></div>
+                {% else %}<div class="card-bg-color" style="background-color: #333333;"></div>{% endif %}
+            </div>
+            <div class="snap-section-card-content-wrapper">
+                {% if module.panel_3.panel_icon_class %}<div class="card-icon text-4xl mb-3"><i class="{{ module.panel_3.panel_icon_class }}"></i></div>{% endif %}
+                <h3 class="text-2xl font-semibold mb-2">{{ module.panel_3.headline }}</h3>
+                {% if module.panel_3.description %}<p class="text-base leading-relaxed mb-4">{{ module.panel_3.description }}</p>{% endif %}
+                {% if module.panel_3.button_text && module.panel_3.button_link.href %}<a href="{{ module.panel_3.button_link.href }}" class="cta-button text-sm font-semibold py-2 px-4 rounded-lg" {% if module.panel_3.button_link.open_in_new_tab %}target="_blank"{% endif %}>{{ module.panel_3.button_text }}</a>{% endif %}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if module.panel_4.headline %}
+        <section class="snap-section-card" id="{{ module.panel_4.section_id }}">
+            <div class="card-background-layer">
+                {% if module.panel_4.background_type == "video" and module.panel_4.panel_4_direct_video_url.href %} 
+                    <video class="card-bg-video" 
+                           src="{{ module.panel_4.panel_4_direct_video_url.href }}" {# Using .href for URL field object #}
+                           {# Poster can still try to come from the old video field if it had one, or the image field #}
+                           {% if module.panel_4.background_video.poster_url %}poster="{{ module.panel_4.background_video.poster_url }}"{% elif module.panel_4.background_image.src %}poster="{{ module.panel_4.background_image.src }}"{% endif %}
+                           autoplay loop muted playsinline
+                           aria-label="Background video for {{ module.panel_4.headline }}">
+                        Your browser does not support the video tag.
+                    </video>
+                {% elif module.panel_4.background_type == "image" and module.panel_4.background_image.src %}
+                    <div class="card-bg-image" style="background-image: url('{{ module.panel_4.background_image.src }}');"></div>
+                {% elif module.panel_4.background_type == "color" and module.panel_4.background_color.color %}
+                    <div class="card-bg-color" style="background-color: {{ module.panel_4.background_color.color }};"></div>
+                {% else %}<div class="card-bg-color" style="background-color: #333333;"></div>{% endif %}
+            </div>
+            <div class="snap-section-card-content-wrapper">
+                {% if module.panel_4.panel_icon_class %}<div class="card-icon text-4xl mb-3"><i class="{{ module.panel_4.panel_icon_class }}"></i></div>{% endif %}
+                <h3 class="text-2xl font-semibold mb-2">{{ module.panel_4.headline }}</h3>
+                {% if module.panel_4.description %}<p class="text-base leading-relaxed mb-4">{{ module.panel_4.description }}</p>{% endif %}
+                {% if module.panel_4.button_text && module.panel_4.button_link.href %}<a href="{{ module.panel_4.button_link.href }}" class="cta-button text-sm font-semibold py-2 px-4 rounded-lg" {% if module.panel_4.button_link.open_in_new_tab %}target="_blank"{% endif %}>{{ module.panel_4.button_text }}</a>{% endif %}
+            </div>
+        </section>
+    {% endif %}
+
+</div>

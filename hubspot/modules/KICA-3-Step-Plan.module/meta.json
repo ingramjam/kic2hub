@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "content_types" : [ "KNOWLEDGE_BASE", "QUOTE_TEMPLATE", "CASE_STUDY", "LANDING_PAGE", "SUBSCRIPTION", "SITE_PAGE", "CUSTOMER_PORTAL", "BLOG_LISTING", "WEB_INTERACTIVE", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 216321508045,
+  "label" : "KICA-3-Step-Plan",
+  "is_available_for_new_content" : true
+}

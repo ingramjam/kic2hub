@@ -1,0 +1,14 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 43370581520,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../css/font-awesome.min.css",
+    "name" : "font-awesome.min.css"
+  } ],
+  "label" : "Product_Feature",
+  "icon" : "https://f.hubspotusercontent00.net/hubfs/7712601/DARK_Product_Feature_Diamond.svg",
+  "is_available_for_new_content" : true
+}

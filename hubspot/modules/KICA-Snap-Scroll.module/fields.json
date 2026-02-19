@@ -1,0 +1,710 @@
+[ {
+  "id" : "994e2af5-de1b-3ef4-3523-a20d3a08f234",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : { }
+}, {
+  "id" : "5dd737f2-b27d-823c-437d-d397e8a83688",
+  "name" : "panel_1",
+  "label" : "Panel 1",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "13a4f6ac-64af-4f20-9539-6b9136fe971f",
+    "name" : "about",
+    "label" : "Section ID",
+    "help_text" : "Important: Enter a unique, one-word ID (e.g., about-us). This is used for the navigation dots to link correctly. No spaces or special characters.",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "4401ef49-6fdc-3fde-d3ed-59365957b41c",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "help_text" : "The page or external URL the button should link to.\n",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "6fd85904-3950-d701-2456-a6498a2936ac",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "help_text" : "The text that appears on the call-to-action button (e.g., \"Learn More\").",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "801ff383-d2fb-933a-c320-ed8b7b80dbe2",
+    "name" : "description",
+    "label" : "Description",
+    "help_text" : "The short paragraph of text for this panel.\n",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null
+  }, {
+    "id" : "55e5aa1b-902f-1c62-67de-7d0497961390",
+    "name" : "headline",
+    "label" : "Headline",
+    "help_text" : "The main title for this panel.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "be2dbf33-215d-dafc-380a-e342c90ce81f",
+    "name" : "panel_icon",
+    "label" : "Icon Class",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "84f70866-d46d-615b-6b7a-abc6f66dac44",
+    "name" : "background_type",
+    "label" : "Background Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "color", "Color" ], [ "image", "Image" ], [ "video", "Video" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "video"
+  }, {
+    "id" : "d29383d9-0376-b072-e631-d3d50df100bf",
+    "name" : "background_video",
+    "label" : "Background Video",
+    "required" : false,
+    "locked" : false,
+    "resizable" : true,
+    "show_preview" : true,
+    "show_advanced_options" : true,
+    "type" : "videoplayer",
+    "display_width" : null
+  }, {
+    "id" : "256e90c6-b82f-1f85-493f-02e7d2f7eb38",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "help_text" : "Select a tall, high-quality image for the panel background.",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : ""
+    }
+  }, {
+    "id" : "74ad124d-28f9-7bee-3dfb-0e8f06c5b0e8",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : null
+    }
+  }, {
+    "id" : "bbaee8d6-5a90-2e8c-4af6-a583cb9745fa",
+    "name" : "panel_1_direct_video_url",
+    "label" : "Panel 1 Direct Video URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "button_link" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "panel_icon" : { },
+    "background_type" : "video",
+    "background_image" : {
+      "src" : ""
+    },
+    "background_color" : {
+      "color" : null,
+      "opacity" : null
+    },
+    "panel_1_direct_video_url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }
+}, {
+  "id" : "5e7bf5e5-b6ff-4bf2-e1af-188f5fdeb36d",
+  "name" : "panel_2",
+  "label" : "Panel 2",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "dc73ada0-9cd5-b1f1-526b-7166c7b2dbb4",
+    "name" : "text",
+    "label" : "Section ID",
+    "help_text" : "Important: Enter a unique, one-word ID (e.g., about-us). This is used for the navigation dots to link correctly. No spaces or special characters.",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "79e3c9b6-416e-8788-c20b-aa29e849a683",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "help_text" : "The page or external URL the button should link to.\n",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "b58531fe-05a5-abd8-d908-aa49efa0c2d9",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "help_text" : "The text that appears on the call-to-action button (e.g., \"Learn More\").",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "426cd237-e263-99fa-3c8a-5ac845066c0e",
+    "name" : "description",
+    "label" : "Description",
+    "help_text" : "The short paragraph of text for this panel.\n",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null
+  }, {
+    "id" : "cfe968eb-0a94-7507-ef7e-65af845d02b8",
+    "name" : "headline",
+    "label" : "Headline",
+    "help_text" : "The main title for this panel.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "b89dd58c-24d6-7dc6-8dcb-c297664c9382",
+    "name" : "panel_icon",
+    "label" : "Panel Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.14.0",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "93e69f3c-1c3b-99e7-13d5-9bb1b841efa1",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "help_text" : "Select a tall, high-quality image for the panel background.",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : ""
+    }
+  }, {
+    "id" : "ec6b54c8-ce71-8209-e76d-2de17d925f01",
+    "name" : "background_type",
+    "label" : "Background Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "color", "Color" ], [ "image", "Image" ], [ "video", "Video" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null
+  }, {
+    "id" : "589b64d5-27f8-8cd1-ee05-eca024d55bfe",
+    "name" : "background_video",
+    "label" : "Background Video",
+    "required" : false,
+    "locked" : false,
+    "resizable" : true,
+    "show_preview" : true,
+    "show_advanced_options" : false,
+    "type" : "videoplayer",
+    "display_width" : null
+  }, {
+    "id" : "13d56301-6820-0136-e50b-94b89dc47750",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : null
+    }
+  }, {
+    "id" : "5487cfde-d0a4-8e6b-d8e6-d8304b0657fb",
+    "name" : "panel_2_direct_video_url",
+    "label" : "Panel 2 Direct Video URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "button_link" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "panel_icon" : { },
+    "background_image" : {
+      "src" : ""
+    },
+    "background_color" : {
+      "color" : null,
+      "opacity" : null
+    },
+    "panel_2_direct_video_url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }
+}, {
+  "id" : "8387bb0f-ca1c-7f3b-b024-7b782a3ba47c",
+  "name" : "panel_3",
+  "label" : "Panel 3",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "3c82328d-1375-2563-6405-9b1aa17f4941",
+    "name" : "section_id",
+    "label" : "Section ID",
+    "help_text" : "Important: Enter a unique, one-word ID (e.g., about-us). This is used for the navigation dots to link correctly. No spaces or special characters.",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "35893da8-5c21-4182-4666-7f08caa6fa97",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "help_text" : "The page or external URL the button should link to.\n",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "33d70777-dfcc-bc8a-685d-a108963dc169",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "help_text" : "The text that appears on the call-to-action button (e.g., \"Learn More\").",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "890af17e-9b97-a422-1547-db89dbf3906f",
+    "name" : "description",
+    "label" : "Description",
+    "help_text" : "The short paragraph of text for this panel.\n",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null
+  }, {
+    "id" : "dccd19d8-5373-261b-235d-4aaf96db87df",
+    "name" : "headline",
+    "label" : "Headline",
+    "help_text" : "The main title for this panel.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "a59b9175-9411-a278-4439-09b08ed61b12",
+    "name" : "panel_icon",
+    "label" : "Panel Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-6.4.2",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "bf2aa5cd-eaaf-a2b5-067c-4dac39dcd759",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "help_text" : "Select a tall, high-quality image for the panel background.",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "41d35185-82e4-2d91-cc70-3d51de1ff2ee",
+    "name" : "background_type",
+    "label" : "Background Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "color", "Color" ], [ "image", "Image" ], [ "video", "Video" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null
+  }, {
+    "id" : "2ad736f0-7aa6-5e65-2b17-d5b7a4183926",
+    "name" : "background_video",
+    "label" : "Background Video",
+    "required" : false,
+    "locked" : false,
+    "resizable" : true,
+    "show_preview" : true,
+    "show_advanced_options" : true,
+    "type" : "videoplayer",
+    "display_width" : null
+  }, {
+    "id" : "b9a67c3f-8939-befe-913c-50cd13cefd03",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : null
+    }
+  }, {
+    "id" : "49be1b4a-abd4-7d08-3019-0c12d42d624e",
+    "name" : "panel_3_direct_video_url",
+    "label" : "Panel 3 Direct Video URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "button_link" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "panel_icon" : { },
+    "background_image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "background_color" : {
+      "color" : null,
+      "opacity" : null
+    },
+    "panel_3_direct_video_url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }
+}, {
+  "id" : "1c59f932-30d1-88b8-ab76-70d01eeee103",
+  "name" : "panel_4",
+  "label" : "Panel 4",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "3909cbd2-7bb6-f395-86ef-34e0e326acbc",
+    "name" : "app",
+    "label" : "Section ID",
+    "help_text" : "Important: Enter a unique, one-word ID (e.g., about-us). This is used for the navigation dots to link correctly. No spaces or special characters.",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "f5c8ec4b-0fae-599b-feac-99772411adf2",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "help_text" : "The page or external URL the button should link to.\n",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "2a516e86-09be-59fb-c927-2383ec9cdd97",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "help_text" : "The text that appears on the call-to-action button (e.g., \"Learn More\").",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "74e564bc-659a-d16b-3441-b8fff4be1e87",
+    "name" : "description",
+    "label" : "Description",
+    "help_text" : "The short paragraph of text for this panel.\n",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null
+  }, {
+    "id" : "33dbda09-d1ea-7e64-5772-146caab31965",
+    "name" : "headline",
+    "label" : "Headline",
+    "help_text" : "The main title for this panel.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "ef89b354-64c4-f83b-c471-1cf8090f4881",
+    "name" : "panel_icon",
+    "label" : "Panel Icon",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "icon_set" : "fontawesome-5.14.0",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "46da12f5-0efa-d40c-8f0d-ecc5ca81a218",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "help_text" : "Select a tall, high-quality image for the panel background.",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://131650.fs1.hubspotusercontent-na2.net/hubfs/131650/mobileapp.jpg",
+      "alt" : "mobileapp",
+      "width" : 1280,
+      "height" : 896,
+      "max_width" : 1280,
+      "max_height" : 896,
+      "size_type" : "auto"
+    }
+  }, {
+    "id" : "9ada3f68-5b90-dbdf-5e33-2408a2564744",
+    "name" : "background_type",
+    "label" : "Background Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "color", "Color" ], [ "image", "Image" ], [ "video", "Video" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "video"
+  }, {
+    "id" : "68196a82-ce54-431a-2f6c-84091a65c5fd",
+    "name" : "background_video",
+    "label" : "Background Video",
+    "required" : false,
+    "locked" : false,
+    "resizable" : true,
+    "show_preview" : true,
+    "show_advanced_options" : true,
+    "type" : "videoplayer",
+    "display_width" : null
+  }, {
+    "id" : "f94dbe84-8b70-ab44-bbe3-d9ab7ead8d07",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : null
+    }
+  }, {
+    "id" : "54875c89-5d93-1084-99ba-72cf2b5f4ce4",
+    "name" : "panel_4_direct_video_url",
+    "label" : "Panel 4 Direct Video URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "button_link" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "panel_icon" : { },
+    "background_image" : {
+      "src" : "https://131650.fs1.hubspotusercontent-na2.net/hubfs/131650/mobileapp.jpg",
+      "alt" : "mobileapp",
+      "width" : 1280,
+      "height" : 896,
+      "max_width" : 1280,
+      "max_height" : 896,
+      "size_type" : "auto"
+    },
+    "background_type" : "video",
+    "background_color" : {
+      "color" : null,
+      "opacity" : null
+    },
+    "panel_4_direct_video_url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }
+} ]
