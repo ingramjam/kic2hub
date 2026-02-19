@@ -56,6 +56,15 @@
     "locked" : false,
     "type" : "image",
     "display_width" : null
+  }, {
+    "id" : "d5e6f7g8-h9i0-j1k2-l3m4-n5o6p7q8r9s0",
+    "name" : "video_url",
+    "label" : "Video URL (YouTube/Vimeo) - Optional",
+    "required" : false,
+    "locked" : false,
+    "type" : "text",
+    "display_width" : null,
+    "placeholder" : "https://youtube.com/watch?v=... or https://vimeo.com/..."
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -106,6 +115,15 @@
     "locked" : false,
     "type" : "image",
     "display_width" : null
+  }, {
+    "id" : "e6f7g8h9-i0j1-k2l3-m4n5-o6p7q8r9s0t1",
+    "name" : "video_url",
+    "label" : "Video URL (YouTube/Vimeo) - Optional",
+    "required" : false,
+    "locked" : false,
+    "type" : "text",
+    "display_width" : null,
+    "placeholder" : "https://youtube.com/watch?v=... or https://vimeo.com/..."
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -156,6 +174,15 @@
     "locked" : false,
     "type" : "image",
     "display_width" : null
+  }, {
+    "id" : "f7g8h9i0-j1k2-l3m4-n5o6-p7q8r9s0t1u2",
+    "name" : "video_url",
+    "label" : "Video URL (YouTube/Vimeo) - Optional",
+    "required" : false,
+    "locked" : false,
+    "type" : "text",
+    "display_width" : null,
+    "placeholder" : "https://youtube.com/watch?v=... or https://vimeo.com/..."
   } ],
   "tab" : "CONTENT",
   "expanded" : false,

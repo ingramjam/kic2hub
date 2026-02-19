@@ -24,9 +24,20 @@
                 {# Testimonial 1 #}
                 {% if has_testimonial_1 %}
                     <div class="card testimonial-card">
-                        {% if module.testimonial_1.author_image %}
+                        {% if module.testimonial_1.video_url or module.testimonial_1.author_image %}
                             <div class="testimonial-author-image">
-                                <img src="{{ module.testimonial_1.author_image.src }}" alt="{{ module.testimonial_1.author_image.alt }}" width="{{ module.testimonial_1.author_image.width }}" height="{{ module.testimonial_1.author_image.height }}" />
+                                {% if module.testimonial_1.video_url %}
+                                    <div class="video-container" data-video-url="{{ module.testimonial_1.video_url }}">
+                                        {% if module.testimonial_1.author_image %}
+                                            <img src="{{ module.testimonial_1.author_image.src }}" alt="{{ module.testimonial_1.author_image.alt }}" width="{{ module.testimonial_1.author_image.width }}" height="{{ module.testimonial_1.author_image.height }}" />
+                                        {% endif %}
+                                        <div class="video-overlay">
+                                            <div class="play-button"></div>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <img src="{{ module.testimonial_1.author_image.src }}" alt="{{ module.testimonial_1.author_image.alt }}" width="{{ module.testimonial_1.author_image.width }}" height="{{ module.testimonial_1.author_image.height }}" />
+                                {% endif %}
                             </div>
                         {% endif %}
                         
@@ -56,9 +67,20 @@
                 {# Testimonial 2 #}
                 {% if has_testimonial_2 %}
                     <div class="card testimonial-card">
-                        {% if module.testimonial_2.author_image %}
+                        {% if module.testimonial_2.video_url or module.testimonial_2.author_image %}
                             <div class="testimonial-author-image">
-                                <img src="{{ module.testimonial_2.author_image.src }}" alt="{{ module.testimonial_2.author_image.alt }}" width="{{ module.testimonial_2.author_image.width }}" height="{{ module.testimonial_2.author_image.height }}" />
+                                {% if module.testimonial_2.video_url %}
+                                    <div class="video-container" data-video-url="{{ module.testimonial_2.video_url }}">
+                                        {% if module.testimonial_2.author_image %}
+                                            <img src="{{ module.testimonial_2.author_image.src }}" alt="{{ module.testimonial_2.author_image.alt }}" width="{{ module.testimonial_2.author_image.width }}" height="{{ module.testimonial_2.author_image.height }}" />
+                                        {% endif %}
+                                        <div class="video-overlay">
+                                            <div class="play-button"></div>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <img src="{{ module.testimonial_2.author_image.src }}" alt="{{ module.testimonial_2.author_image.alt }}" width="{{ module.testimonial_2.author_image.width }}" height="{{ module.testimonial_2.author_image.height }}" />
+                                {% endif %}
                             </div>
                         {% endif %}
                         
@@ -88,9 +110,20 @@
                 {# Testimonial 3 #}
                 {% if has_testimonial_3 %}
                     <div class="card testimonial-card">
-                        {% if module.testimonial_3.author_image %}
+                        {% if module.testimonial_3.video_url or module.testimonial_3.author_image %}
                             <div class="testimonial-author-image">
-                                <img src="{{ module.testimonial_3.author_image.src }}" alt="{{ module.testimonial_3.author_image.alt }}" width="{{ module.testimonial_3.author_image.width }}" height="{{ module.testimonial_3.author_image.height }}" />
+                                {% if module.testimonial_3.video_url %}
+                                    <div class="video-container" data-video-url="{{ module.testimonial_3.video_url }}">
+                                        {% if module.testimonial_3.author_image %}
+                                            <img src="{{ module.testimonial_3.author_image.src }}" alt="{{ module.testimonial_3.author_image.alt }}" width="{{ module.testimonial_3.author_image.width }}" height="{{ module.testimonial_3.author_image.height }}" />
+                                        {% endif %}
+                                        <div class="video-overlay">
+                                            <div class="play-button"></div>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <img src="{{ module.testimonial_3.author_image.src }}" alt="{{ module.testimonial_3.author_image.alt }}" width="{{ module.testimonial_3.author_image.width }}" height="{{ module.testimonial_3.author_image.height }}" />
+                                {% endif %}
                             </div>
                         {% endif %}
                         
