@@ -30,21 +30,26 @@
                             </div>
                         {% endif %}
                         
-                        {% if module.testimonial_1.icon_class %}
-                            <div class="card-icon">
-                                <i class="{{ module.testimonial_1.icon_class }}"></i>
-                            </div>
-                        {% endif %}
-                        
-                        <p class="testimonial-quote">
-                            {{ module.testimonial_1.quote }}
-                        </p>
-                        
-                        {% if module.testimonial_1.author_info %}
-                            <p class="testimonial-author">
-                                - {{ module.testimonial_1.author_info }}
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">
+                                {{ module.testimonial_1.quote }}
                             </p>
-                        {% endif %}
+                            
+                            {% if module.testimonial_1.author_info or module.testimonial_1.icon_class %}
+                                <div class="testimonial-author-info">
+                                    {% if module.testimonial_1.icon_class %}
+                                        <div class="card-icon">
+                                            <i class="{{ module.testimonial_1.icon_class }}"></i>
+                                        </div>
+                                    {% endif %}
+                                    {% if module.testimonial_1.author_info %}
+                                        <p class="testimonial-author">
+                                            {{ module.testimonial_1.author_info }}
+                                        </p>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        </div>
                     </div>
                 {% endif %}
 
@@ -57,21 +62,26 @@
                             </div>
                         {% endif %}
                         
-                        {% if module.testimonial_2.icon_class %}
-                            <div class="card-icon">
-                                <i class="{{ module.testimonial_2.icon_class }}"></i>
-                            </div>
-                        {% endif %}
-                        
-                        <p class="testimonial-quote">
-                            {{ module.testimonial_2.quote }}
-                        </p>
-                        
-                        {% if module.testimonial_2.author_info %}
-                            <p class="testimonial-author">
-                                - {{ module.testimonial_2.author_info }}
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">
+                                {{ module.testimonial_2.quote }}
                             </p>
-                        {% endif %}
+                            
+                            {% if module.testimonial_2.author_info or module.testimonial_2.icon_class %}
+                                <div class="testimonial-author-info">
+                                    {% if module.testimonial_2.icon_class %}
+                                        <div class="card-icon">
+                                            <i class="{{ module.testimonial_2.icon_class }}"></i>
+                                        </div>
+                                    {% endif %}
+                                    {% if module.testimonial_2.author_info %}
+                                        <p class="testimonial-author">
+                                            {{ module.testimonial_2.author_info }}
+                                        </p>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        </div>
                     </div>
                 {% endif %}
 
@@ -84,21 +94,26 @@
                             </div>
                         {% endif %}
                         
-                        {% if module.testimonial_3.icon_class %}
-                            <div class="card-icon">
-                                <i class="{{ module.testimonial_3.icon_class }}"></i>
-                            </div>
-                        {% endif %}
-                        
-                        <p class="testimonial-quote">
-                            {{ module.testimonial_3.quote }}
-                        </p>
-                        
-                        {% if module.testimonial_3.author_info %}
-                            <p class="testimonial-author">
-                                - {{ module.testimonial_3.author_info }}
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">
+                                {{ module.testimonial_3.quote }}
                             </p>
-                        {% endif %}
+                            
+                            {% if module.testimonial_3.author_info or module.testimonial_3.icon_class %}
+                                <div class="testimonial-author-info">
+                                    {% if module.testimonial_3.icon_class %}
+                                        <div class="card-icon">
+                                            <i class="{{ module.testimonial_3.icon_class }}"></i>
+                                        </div>
+                                    {% endif %}
+                                    {% if module.testimonial_3.author_info %}
+                                        <p class="testimonial-author">
+                                            {{ module.testimonial_3.author_info }}
+                                        </p>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        </div>
                     </div>
                 {% endif %}
                 
