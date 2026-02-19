@@ -27,7 +27,7 @@
                         {% if module.testimonial_1.video_url or module.testimonial_1.author_image %}
                             <div class="testimonial-author-image">
                                 {% if module.testimonial_1.video_url %}
-                                    {% set video_url = module.testimonial_1.video_url.url if module.testimonial_1.video_url.url else module.testimonial_1.video_url %}
+                                    {% set video_url = module.testimonial_1.video_url.url if module.testimonial_1.video_url.url else (module.testimonial_1.video_url.src if module.testimonial_1.video_url.src else module.testimonial_1.video_url) %}
                                     <div class="video-container" data-video-url="{{ video_url }}">
                                         {% if module.testimonial_1.author_image %}
                                             <img src="{{ module.testimonial_1.author_image.src }}" alt="{{ module.testimonial_1.author_image.alt }}" width="{{ module.testimonial_1.author_image.width }}" height="{{ module.testimonial_1.author_image.height }}" />
@@ -71,7 +71,7 @@
                         {% if module.testimonial_2.video_url or module.testimonial_2.author_image %}
                             <div class="testimonial-author-image">
                                 {% if module.testimonial_2.video_url %}
-                                    {% set video_url = module.testimonial_2.video_url.url if module.testimonial_2.video_url.url else module.testimonial_2.video_url %}
+                                    {% set video_url = module.testimonial_2.video_url.url if module.testimonial_2.video_url.url else (module.testimonial_2.video_url.src if module.testimonial_2.video_url.src else module.testimonial_2.video_url) %}
                                     <div class="video-container" data-video-url="{{ video_url }}">
                                         {% if module.testimonial_2.author_image %}
                                             <img src="{{ module.testimonial_2.author_image.src }}" alt="{{ module.testimonial_2.author_image.alt }}" width="{{ module.testimonial_2.author_image.width }}" height="{{ module.testimonial_2.author_image.height }}" />
@@ -115,7 +115,7 @@
                         {% if module.testimonial_3.video_url or module.testimonial_3.author_image %}
                             <div class="testimonial-author-image">
                                 {% if module.testimonial_3.video_url %}
-                                    {% set video_url = module.testimonial_3.video_url.url if module.testimonial_3.video_url.url else module.testimonial_3.video_url %}
+                                    {% set video_url = module.testimonial_3.video_url.url if module.testimonial_3.video_url.url else (module.testimonial_3.video_url.src if module.testimonial_3.video_url.src else module.testimonial_3.video_url) %}
                                     <div class="video-container" data-video-url="{{ video_url }}">
                                         {% if module.testimonial_3.author_image %}
                                             <img src="{{ module.testimonial_3.author_image.src }}" alt="{{ module.testimonial_3.author_image.alt }}" width="{{ module.testimonial_3.author_image.width }}" height="{{ module.testimonial_3.author_image.height }}" />

@@ -19,10 +19,19 @@
     });
 
     function openVideoModal(videoUrl) {
+        // Handle empty/null URLs
+        if (!videoUrl || videoUrl === 'undefined' || videoUrl === '') {
+            console.warn('No video URL provided');
+            return;
+        }
+
+        console.log('Opening video modal with URL:', videoUrl);
+        
         // Check if it's a Hubspot media file or external URL
         let embedUrl = '';
         
-        if (videoUrl.includes('hubspot') || videoUrl.includes('.mp4') || videoUrl.includes('.webm') || videoUrl.includes('.mov')) {
+        // Hubspot media files have specific URL patterns
+        if (videoUrl.includes('hubspot') || videoUrl.includes('.mp4') || videoUrl.includes('.webm') || videoUrl.includes('.mov') || videoUrl.includes('.avi')) {
             // Hubspot media file - play directly
             const videoWrapper = document.createElement('div');
             videoWrapper.style.cssText = 'width:90%;max-width:900px;aspect-ratio:16/9;position:relative;';
@@ -43,13 +52,17 @@
             } else if (videoUrl.includes('youtu.be/')) {
                 videoId = videoUrl.split('youtu.be/')[1].split('?')[0];
             }
-            embedUrl = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
-            createVideoIframe(embedUrl);
+            if (videoId) {
+                embedUrl = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+                createVideoIframe(embedUrl);
+            }
         } else if (videoUrl.includes('vimeo.com')) {
             // Vimeo URL
             const videoId = videoUrl.split('/').pop().split('?')[0];
             embedUrl = 'https://player.vimeo.com/video/' + videoId + '?autoplay=1';
             createVideoIframe(embedUrl);
+        } else {
+            console.warn('Unknown video URL format:', videoUrl);
         }
     }
 

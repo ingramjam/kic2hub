@@ -63,7 +63,9 @@
     "required" : false,
     "locked" : false,
     "type" : "file",
-    "display_width" : null
+    "display_width" : null,
+    "allow_external_url" : true,
+    "accept" : [ "video/*" ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -121,7 +123,9 @@
     "required" : false,
     "locked" : false,
     "type" : "file",
-    "display_width" : null
+    "display_width" : null,
+    "allow_external_url" : true,
+    "accept" : [ "video/*" ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -179,7 +183,9 @@
     "required" : false,
     "locked" : false,
     "type" : "file",
-    "display_width" : null
+    "display_width" : null,
+    "allow_external_url" : true,
+    "accept" : [ "video/*" ]
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
