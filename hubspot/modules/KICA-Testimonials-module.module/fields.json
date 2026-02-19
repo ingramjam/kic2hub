@@ -59,13 +59,12 @@
   }, {
     "id" : "d5e6f7g8-h9i0-j1k2-l3m4-n5o6p7q8r9s0",
     "name" : "video_url",
-    "label" : "Video (YouTube/Vimeo URL or Hubspot Media)",
+    "label" : "Video",
     "required" : false,
     "locked" : false,
     "type" : "file",
     "display_width" : null,
-    "allow_external_url" : true,
-    "accept" : [ "video/*" ]
+    "allow_external_url" : true
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -119,13 +118,12 @@
   }, {
     "id" : "e6f7g8h9-i0j1-k2l3-m4n5-o6p7q8r9s0t1",
     "name" : "video_url",
-    "label" : "Video (YouTube/Vimeo URL or Hubspot Media)",
+    "label" : "Video",
     "required" : false,
     "locked" : false,
     "type" : "file",
     "display_width" : null,
-    "allow_external_url" : true,
-    "accept" : [ "video/*" ]
+    "allow_external_url" : true
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -179,13 +177,12 @@
   }, {
     "id" : "f7g8h9i0-j1k2-l3m4-n5o6-p7q8r9s0t1u2",
     "name" : "video_url",
-    "label" : "Video (YouTube/Vimeo URL or Hubspot Media)",
+    "label" : "Video",
     "required" : false,
     "locked" : false,
     "type" : "file",
     "display_width" : null,
-    "allow_external_url" : true,
-    "accept" : [ "video/*" ]
+    "allow_external_url" : true
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
