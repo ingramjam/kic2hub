@@ -48,6 +48,14 @@
     "allow_new_line" : false,
     "type" : "text",
     "display_width" : null
+  }, {
+    "id" : "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name" : "author_image",
+    "label" : "Author Image",
+    "required" : false,
+    "locked" : false,
+    "type" : "image",
+    "display_width" : null
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -90,6 +98,14 @@
     "allow_new_line" : false,
     "type" : "text",
     "display_width" : null
+  }, {
+    "id" : "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+    "name" : "author_image",
+    "label" : "Author Image",
+    "required" : false,
+    "locked" : false,
+    "type" : "image",
+    "display_width" : null
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -131,6 +147,14 @@
     "locked" : false,
     "allow_new_line" : false,
     "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "c3d4e5f6-a7b8-9012-cdef-123456789012",
+    "name" : "author_image",
+    "label" : "Author Image",
+    "required" : false,
+    "locked" : false,
+    "type" : "image",
     "display_width" : null
   } ],
   "tab" : "CONTENT",
