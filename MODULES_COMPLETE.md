@@ -114,8 +114,8 @@ Defines all editable fields in the Design Manager Content tab:
 ### 2. **module.html** - HubL Template
 Server-side template that:
 - Interpolates module fields using `{{ module.field_name }}`
-- Loops through repeater fields: `{% for item in module.items %}`
-- Uses conditional rendering: `{% if module.show_feature %}`
+- Loops through repeater fields: `{% raw %}{% for item in module.items %}{% endraw %}`
+- Uses conditional rendering: `{% raw %}{% if module.show_feature %}{% endraw %}`
 - Includes embedded JavaScript for interactivity
 - Maintains responsive, semantic HTML structure
 
