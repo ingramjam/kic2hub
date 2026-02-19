@@ -17,8 +17,8 @@
   "display_width" : null
 }, {
   "id" : "f42ad0aa-e574-3913-8667-b70d99f18124",
-  "name" : "testimonial_1",
-  "label" : "Testimonial 1",
+  "name" : "testimonials",
+  "label" : "Testimonials",
   "required" : false,
   "locked" : false,
   "children" : [ {
@@ -59,110 +59,11 @@
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : {
-    "icon_class" : "fas fa-comments"
-  }
-}, {
-  "id" : "ccff672f-10fa-ea67-1fb8-0e981b419315",
-  "name" : "testimonial_2",
-  "label" : "Testimonial 2",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "db3b652a-9686-ffa5-a136-b92a33c75e31",
-    "name" : "icon_class",
-    "label" : "Icon Class (Font Awesome)",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "fas fa-comments"
-  }, {
-    "id" : "812f0c42-16e0-60fa-661b-8bc2018432d2",
-    "name" : "quote",
-    "label" : "Quote",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext",
-    "display_width" : null
-  }, {
-    "id" : "dacd1193-e5e6-6d1e-ccaa-0c842906d26a",
-    "name" : "author_info",
-    "label" : "Author Name & Location",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null
-  }, {
-    "id" : "b2c3d4e5-f6a7-8901-bcde-f12345678901",
-    "name" : "author_image",
-    "label" : "Author Image",
-    "required" : false,
-    "locked" : false,
-    "type" : "image",
-    "display_width" : null
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : {
-    "icon_class" : "fas fa-comments"
-  }
-}, {
-  "id" : "c0954a65-c3c7-43e8-f683-d5b1b9dd8102",
-  "name" : "testimonial_3",
-  "label" : "Testimonial 3",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "0d24e518-897d-9bf4-6716-99959a7aba44",
-    "name" : "icon_class",
-    "label" : "Icon Class (Font Awesome)",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "fas fa-comments"
-  }, {
-    "id" : "aac0ba08-8f77-c1b0-1c61-30ed13845f39",
-    "name" : "quote",
-    "label" : "Quote",
-    "required" : false,
-    "locked" : false,
-    "type" : "richtext",
-    "display_width" : null
-  }, {
-    "id" : "a17de95b-5e42-bc0a-b575-20393728d5c9",
-    "name" : "author_info",
-    "label" : "Author Name & Location",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null
-  }, {
-    "id" : "c3d4e5f6-a7b8-9012-cdef-123456789012",
-    "name" : "author_image",
-    "label" : "Author Image",
-    "required" : false,
-    "locked" : false,
-    "type" : "image",
-    "display_width" : null
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : {
-    "icon_class" : "fas fa-comments"
-  }
+  "occurrence_meta" : {
+    "min" : 1,
+    "max" : 50,
+    "default" : 3
+  },
+  "type" : "repeater",
+  "display_width" : null
 } ]
